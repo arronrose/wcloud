@@ -1,0 +1,402 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='workphone.')
+    meta(name='keywords', content='workphone')
+    title 海云安全手机
+    link(rel='shortcut icon', href='images/logo.png')
+    link(rel='stylesheet', type='text/css', href='jquery-ui-1.8.23.custom/css/ui-lightness/jquery-ui-1.8.23.custom.css')
+    link(type='text/css', rel='stylesheet', href='style/reset.css')
+    link(type='text/css', rel='stylesheet', href='jqueryCustom/jquery.mCustomScrollbar.css')
+    link(type='text/css', rel='stylesheet', href='style/admin.css')
+    link(type='text/css', rel='stylesheet', href='style/vinput.css')
+    script(type='text/javascript', src='script/modernizr+2.0.3.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-ui-1.8.23.custom.min.js')
+    script(type='text/javascript', src='script/setCookie.js')
+    script(type='text/javascript', src='jqueryCustom/jquery.mCustomScrollbar.concat.min.js')
+  body
+    //(onContextMenu="return false")
+    #wrap
+      header
+        // 头部
+        a#toplogo
+          img(src='images/logo_ad.png', alt='', height='45')
+        nav#top
+          ul
+            // 头部的连接
+            li
+              a(href='/f_org_acc') 账户
+
+            li
+              a(href='/f_org_control') 多维管控
+            li
+              a.navHover(href='/f_org_home') 设备管理
+            li
+              a(href='/f_org_strategy') 策略配置
+            li
+              a(href='/f_org_contacts') 同步联系人
+            li
+              a(href='/f_org_mapp') 应用管理
+            li
+              a(href='/f_org_log') 查看日志
+            li
+              a(href='/f_org_statistics') 数据统计
+            li
+              a(href='/f_org_wifi') WIFI
+            li
+              a#logout(href='#') 退出
+      aside#home(style="border-right: 1px solid #eee;")
+        // 边栏
+        // workphone logo
+        ul#guanli
+          //.jscroll
+          li.firstLi
+            img.kao(src='images/home.png', width='20', height='20', alt='logo', style='position:absolute;top:3px;left:0;')
+            div.jscroll
+            // 管理员
+            ul#yic
+              // 小部门
+      article
+        // 右面的主体内容容器
+        section#main.main
+          // 主题内容 设备数据现实
+          #gnan
+            // 功能按钮区disabled="disabled"
+            button#xzqb(type='button') 选择全部
+            button#kcxz(type='button') 取消选择
+            button#delusers(type='button') 用户删除
+            a#popd.cb(href="#")
+            button#jihuo.tog(type='button') 推送通知
+            button#lock.tog(type='button') 锁定
+            button#unlock.tog(type='button') 解锁
+            button.tog(value="qccelue" onclick="choice(this)") 清除策略
+            //button.tog(value="devControl" onclick="choice(this)") 硬件管理
+            //button.tog(value="shanchu" onclick="choice(this)") 远程遥毁
+            button.tog(value="dwgk" onclick="dwgkchoice(this)") 多维管控
+            select#selecttype(name="selecttype")
+              option(value="") 请选择搜索类型
+              //option(value="status") 当前状态
+              option(value="username") 姓名
+              option(value="devs") 设备号
+              option(value="uid") 电话号码
+              option(value="title") 职位/职称
+              option(value="oudn") 所属部门
+              //option(value="last_update") 最后在线时间
+              //option(value="device") 活跃度
+
+            //input#guolv(type='text', placeholder='按字段搜索...')
+            input#qjguolv(type='text', placeholder='全局搜索...')
+            button#sousuo(type='button',value='0') 搜索
+            span#shuaxin
+              img(src='images/shuaxin_ad.png', alt='')
+            // 刷新的按钮
+          #shebei
+            #shebeiH
+              table#ygt
+                // 这里是设备列表的头部
+                colgroup
+                  col.col_1
+                  col.col_2
+                  col.col_3
+                  col.col_4
+                  col.col_5
+                  col.col_6
+                  col.col_7
+                  col.col_8
+                  col.col_9
+                  col.col_10
+                tr
+                  th
+                    span(id='select_page',class="checkbox checkbox_uncheck",title="选择本页用户")
+                  th(id='thstatus',class='0',onclick='sortable(1,this.id)',title='点击按状态排序') 当前状态
+                  th(id='thname',class='0',onclick='sortable(2,this.id)',title='点击按姓名排序') 姓名
+                  th(id='thimei',class='0',onclick='sortable(3,this.id)',title='点击按设备号排序') 设备号
+                  th(id='thtelephone',class='0',onclick='sortable(4,this.id)',title='点击按电话号码排序') 电话号码
+                  th(id='thjob',class='0',onclick='sortable(5,this.id)',title='点击按职位/职称排序') 职位/职称
+                  th(id='thdepartment',class='0',onclick='sortable(6,this.id)',title='点击按部门排序') 所属部门
+                  th(id='thupdatetime',class='0',onclick='sortable(7,this.id)',title='点击按最后在线时间排序') 最后在线时间
+                  th(id='thdevice',class='0',onclick='sortable(8,this.id)',title='点击按活跃度排序') 活跃度
+                  th(id='thactive',class='0',onclick='sortable(9,this.id)') 激活
+            #shebeiB.jscroll
+              // jscroll
+              .jscrollContainer
+                table#yglb.altTr
+                  // 设备列表的主体内容
+                  colgroup
+                    col.col_1
+                    col.col_2
+                    col.col_3
+                    col.col_4
+                    col.col_5
+                    col.col_6
+                    col.col_7
+                    col.col_8
+                    col.col_9
+                    col.col_10
+                  tbody
+          #shebei_bottom
+            span#bottom_title(value=0) 共0页，0条用户信息
+            span#users_perpage(value=0)
+            .bottom_title
+              a#first_page 首页
+              a#pre_page 上一页
+              span 第
+                input#page_number(type="text",value=0,onchange="pageChange(this.value)")
+                页
+              a#next_page 下一页
+              a#end_page 末页
+                    
+        section#ditu
+          // 地图
+          #dituTab.tabtu
+            ul
+              li.firstLi
+                a.tabHover(href='javascript:;') 地图
+          #dituContent
+          // 地图容器
+        section#yxx
+          #currentUser.tab_cu
+          // 详细资料
+          #xinxiTab.tab
+            ul
+              li.firstLi
+                a.tabHover(href='#xiCont') 详细资料
+              li
+                a(href='#straList') 当前策略
+              li
+                a(href='#set') 修改锁屏密码
+              li
+                a(href='#appInfo') 应用程序
+              li
+                a(href='#logData') 日志
+              li
+                a(href='#modUser') 修改用户信息
+            span#staticinfoRe
+                img(src='images/shuaxin_ad.png', alt='')
+          #xList
+            #xiCont.jscroll.tabw
+              button#download_details(type='button' style="float:right;") 下载并保存至本地
+              .jscrollContainer
+                table.altTr
+                  colgroup
+                    col.ban
+                    col.ban
+                  tbody
+            #straList.jscroll.tabw
+              .jscrollContainer
+                table.altTr
+                  colgroup
+                      col.col_4_1_1
+                      col.col_4_1_2
+                      col.col_4_1_1
+                      col.col_4_1_2
+                  tbody
+            #appInfo.jscroll.tabw
+              .jscrollContainer
+                table.altTr
+                  colgroup
+                    col.col_4_1
+                    col.col_4_1
+                    col.col_4_1
+                    col.col_4_1
+                  tbody
+            #logData.jscroll.tabw
+              button#download_logs(type='button' style="float:right;") 下载并保存至本地
+              .jscrollContainer
+                table.altTr
+                  colgroup
+                    col.col_4_1
+                    col.col_4_1
+                    col.col_4_1
+                    col.col_4_1
+                  tbody
+                  //tr
+                    td 时间
+                    td 应用
+                    td 动作
+                    td 描述
+            #set.tabw
+              form#srnp
+                p.tt 修改海云安全手机锁屏密码
+                p.on
+                  label(for='xmm') 新密码
+                  input#xmm(type='password', name='xmm')
+                p.tw
+                  label(for='qxmm') 确认密码
+                  input#qxmm(type='password', name='qxmm')
+                //p.st 修改密码成功！
+                p
+                  button(type='submit') 提交
+            #modUser.tabw
+              form#muserinfo
+                p.tt 修改当前用户信息
+                p.on
+                  label(for='mname') 姓名
+                  input#mname(type='text', name='mname')
+                //p.tw
+                //  label(for='memail') 邮箱
+                //  input#memail(type='text', name='memail')
+                p.tw
+                  label(for='mphone') 手机号
+                  input#mphone(type='text', name='mphone')
+                  //label(id='check_phone_result')
+                p.tw
+                  label(for='mimei') 设备号
+                  input#mimei(type='text', name='mimei')
+                p.st
+                  label(for='mzhiw') 职位
+                  input#mzhiw(type='text', name='mzhiw')
+                p.st
+                  label(for='mzhic') 职称
+                  input#mzhic(type='text', name='mzhic')
+                p
+                  input#moudn(type='hidden')
+                p.ot
+                  label(for='mldapou') 所属部门
+                  span#modbm
+                p.bt
+                  button(id="msubmit", type='submit') 提交
+    #popceng
+      #tuisong.dialog(title='发送通知')
+        form#lso
+          p
+            input#purl(type='text', name='purl', value='', autocomplete='off',)
+          p.Lp
+            //span.floatL.gray 提示：网页将会在工作界面内开启。
+            button#urlSub.Lbtn(type='submit', name='urlSub') 发送
+            button#urlExit.Lbtn(type='button', name='urlExit') 取消
+      #suoding.dialog(title='锁定')
+        form#lst
+          p 这将锁定用户手机，输入密码后才能继续使用，是否要继续？
+          p.centerBtn.Lp
+            button#sSuoding.Lbtn(type='submit') 是
+            button#bSuoding.Lbtn(type='button') 否
+      #jiesuo.dialog(title='解锁')
+        form#lsut
+          p 这将强制解开用户手机的锁定状态，是否要继续？
+          p.centerBtn.Lp
+            button#sJiesuo.Lbtn(type='submit') 是
+            button#bJiesuo.Lbtn(type='button') 否
+      #qingchu.dialog(title='清除工作数据')
+        form#lsth
+          p 这将清除用户手机中的所有工作数据和个人信息，并使设备恢复出厂设置，是否要继续？
+          p.centerBtn.Lp
+            button#sqingchu.Lbtn(type='submit') 是
+            button#bqingchu.Lbtn(type='button') 否
+      #upsys.dialog(title='更新系统')
+        form#lsup
+          p 此操作将会推送新系统给用户，是否要继续？
+          p.centerBtn.Lp
+            button#supsys.Lbtn(type='submit') 是
+            button#bupsys.Lbtn(type='button') 否
+      #qchu.dialog(title='清除策略')
+        form#lsf
+          p 这将使用户手机的所有策略失效，是否要继续？
+          p.centerBtn.Lp.xl
+            button#sqc.Lbtn(type='submit' onclick="smssubmit(this)") 是
+            button#bqc.Lbtn(type='button') 否
+      #DevControl.dialog(title='硬件设备管控')
+        form#lsdc
+          #wifi
+            a WIFI :
+            #wifiCon.jiaonang.jiaonang_disabled
+          #blueth
+            a 蓝  牙:
+            #blthCon.jiaonang.jiaonang_disabled
+          #camera
+            a 摄像头:
+            #cameraCon.jiaonang.jiaonang_disabled
+          #tape
+            a 录  音:
+            #tapeCon.jiaonang.jiaonang_disabled
+          #gps
+            a GPS :
+            #gpsCon.jiaonang.jiaonang_disabled
+          #mobiledata
+            a 移动数据:
+            #mobiledataCon.jiaonang.jiaonang_disabled
+          #usb_connect
+            a USB连接:
+            #usbcCon.jiaonang.jiaonang_disabled
+          #usb_debug
+            a USB调试:
+            #usbdCon.jiaonang.jiaonang_disabled
+          p.centerBtn.Lp.xl
+            button#sDevcon.Lbtn(type='button') 确定
+            button#bDevcon.Lbtn(type='button') 取消
+      #delete.dialog(title='用户删除')
+        form#lsscyh
+          p 此操作将会在多维管控平台中删除用户的一切信息，是否要继续？
+          p.centerBtn.Lp.xl
+            button#sScyh.Lbtn(type='submit') 是
+            button#bScyh.Lbtn(type='button') 否
+      #conflict.dialog(title='wifi管控冲突')
+        form#straconflict
+          p#stramesg  wifi非禁用指令与设备正在执行的策略管控有冲突，是否强制执行该指令？
+          p.centerBtn.Lp
+            button#scomplete.Lbtn(type='submit') 是
+            button#bcomplete.Lbtn(type='button') 否
+      #bconflict.dialog(title='蓝牙管控冲突')
+        form#bstraconflict
+          p#bstramesg  蓝牙非禁用指令与设备正在执行的策略管控有冲突，是否强制执行该指令？
+          p.centerBtn.Lp
+            button#bscomplete.Lbtn(type='submit') 是
+            button#bbcomplete.Lbtn(type='button') 否
+      #cconflict.dialog(title='摄像头管控冲突')
+        form#cstraconflict
+          p#cstramesg  摄像头非禁用指令与设备正在执行的策略管控有冲突，是否强制执行该指令？
+          p.centerBtn.Lp
+            button#cscomplete.Lbtn(type='submit') 是
+            button#cbcomplete.Lbtn(type='button') 否
+      #tconflict.dialog(title='录音管控冲突')
+        form#tstraconflict
+          p#tstramesg  录音非禁用指令与设备正在执行的策略管控有冲突，是否强制执行该指令？
+          p.centerBtn.Lp
+            button#tscomplete.Lbtn(type='submit') 是
+            button#tbcomplete.Lbtn(type='button') 否
+        #gconflict.dialog(title='gps管控冲突')
+            form#gstraconflict
+                p#gstramesg  gps非禁用指令与设备正在执行的策略管控有冲突，是否强制执行该指令？
+                p.centerBtn.Lp
+                    button#gscomplete.Lbtn(type='submit') 是
+                    button#gbcomplete.Lbtn(type='button') 否
+        #mconflict.dialog(title='移动数据管控冲突')
+            form#mstraconflict
+                p#mstramesg  移动数据非禁用指令与设备正在执行的策略管控有冲突，是否强制执行该指令？
+                p.centerBtn.Lp
+                    button#mscomplete.Lbtn(type='submit') 是
+                    button#mbcomplete.Lbtn(type='button') 否
+        #ucconflict.dialog(title='usb连接管控冲突')
+            form#ucstraconflict
+                p#ucstramesg  usb连接非禁用指令与设备正在执行的策略管控有冲突，是否强制执行该指令？
+                p.centerBtn.Lp
+                    button#ucscomplete.Lbtn(type='submit') 是
+                    button#ucbcomplete.Lbtn(type='button') 否
+        #udconflict.dialog(title='usb调试管控冲突')
+            form#udstraconflict
+                p#udstramesg  usb调试非禁用指令与设备正在执行的策略管控有冲突，是否强制执行该指令？
+                p.centerBtn.Lp
+                    button#udscomplete.Lbtn(type='submit') 是
+                    button#udbcomplete.Lbtn(type='button') 否
+        #iporsms.dialog(title='请选择管控方式')
+            p
+                button.choicebtn(type='button' name="ipsend") 网络途径
+            p
+                button.choicebtn(type='button' name="smssend") 短信途径
+        #wuliortongxin.dialog(title='请选择管控方式')
+          p
+            button.dwgkchoicebtn(type='button' name="wulicontrol" style="padding-left: 42px;padding-right: 42px;") 物理管控
+          p
+            button.dwgkchoicebtn(type='button' name="tongxincontrol") 通信业务管控
+    script(type='text/javascript', src='script/tool.js')
+    script(type='text/javascript', src='http://api.map.baidu.com/api?key=&v=1.1&services=80ca255d6d2f3660b9dc9ecba59010b0')
+    script(type='text/javascript', src='script/Bmap.js')
+    script(type='text/javascript', src='script/login_ad.js')
+    script(type='text/javascript', src='script/tool.js')
+    script(type='text/javascript', src='script/strategy.js')
+    script(type='text/javascript', src='script/vinput.js')
+    script(type='text/javascript', src='script/main.js')
+    script(type='text/javascript', src='script/acc.js')
+    script(type='text/javascript', src="script/Code.js")

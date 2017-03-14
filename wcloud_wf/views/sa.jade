@@ -1,0 +1,120 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='workphone.')
+    meta(name='keywords', content='workphone')
+    title 海云安全手机-安全员
+    link(rel='shortcut icon', href='images/logo.png')
+    link(type='text/css', rel='stylesheet', href='style/reset.css')
+    link(type='text/css', rel='stylesheet', href='jqueryCustom/jquery.mCustomScrollbar.css')
+    link(type='text/css', rel='stylesheet', href='style/admin_master.css')
+    link(type='text/css', rel='stylesheet', href='style/vinput.css')
+    script(type='text/javascript', src='script/modernizr+2.0.3.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='script/setCookie.js')
+    script(type='text/javascript', src='jqueryCustom/jquery.mCustomScrollbar.concat.min.js')
+    script(type='text/javascript', src='script/main.js')
+  body
+    #wrap
+      header
+        // 头部
+        a#toplogo
+          img(src='images/logo_ad.png', alt='', height='45')
+        nav#top
+          ul
+            // 头部的连接
+            li
+              a.navHover(href='/f_org_sa') 安全员账户
+            li
+              a(href='/f_org_sa_list') 安全员管理
+            li
+              a#logout(href='#') 退出
+      aside
+        // 边栏
+        h4.asideH.hf.txt_center
+          img.kao(src='images/wp.jpg', width='20', height='20', alt='logo', style='margin-right:10px')
+          安全员
+        ul.asideU
+          li
+            a.tab.hover(href='#sazl') 安全员资料
+          li
+            a.tab(href='#addaqy') 添加安全员
+      article#sa_acc
+        section#sazl.youxin
+          h4.hf 安全员资料
+          .ct
+            #dn.xm
+              a.ra(href='javascript:;') 修改密码
+              p.xsd
+                span.tou 登入名
+                span#saName.xiang
+              .yc
+                form#samim
+                  p
+                    label(for='sadma') 当前密码
+                    input#sadma(type='password', name='sadma')
+                  p
+                    label(for='saxma') 新密码
+                    input#saxma(type='password', name='saxma')
+                  p
+                    label(for='saqxma') 确认新密码
+                    input#saqxma(type='password', name='saqxma')
+                  p.an.txt_center
+                    button(type='submit') 保存
+                    button.err(type='button') 关闭
+            #qx.xm
+              p.xsd
+                span.tou 权限
+                span#saqx.xiang
+
+        section#addaqy.youxin
+          h4.hf 添加安全员
+          .ct
+            form#addsa
+                #addsanm.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='sazh') 账户名
+                      input#sazh(type='text', name='sazh')
+                      label(style="text-align:left;color:red")*
+                #addsapw1.xm
+                  .yc(style='display:block;border-top: 0px;border:1px solid # ')
+                    p
+                      label(for='sazhmm1') 账户密码
+                      input#sazhmm1(type='password', name='sazhmm1')
+                      label(style="text-align:left;color:red")*
+                #addsapw2.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='sazhmm2') 确认密码
+                      input#sazhmm2(type='password', name='sazhmm2')
+                      label(style="text-align:left;color:red")*
+
+                #addsaemail.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='sazhmail') 邮箱
+                      input#sazhmail(type='text', name='sazhmail')
+                #addsaphone.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='sazhphone') 手机号码
+                      input#sazhphone(type='text', name='sazhphone')
+                      label(style="text-align:left;color:red")*
+
+                #addsaqx.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='sazhqx') 账户权限
+                      select#sazhqx(type='text', name='sazhqx')
+                        option(value='请选择') 请选择
+                        option(value='普通安全员')普通安全员
+                      label(style="text-align:left;color:red")*
+                button#addsasend.ra(type='submit') 提交
+
+    script(type='text/javascript', src='script/login_ad.js')
+    script(type='text/javascript', src='script/acc.js')
+    script(type='text/javascript', src='script/master.js')
+    script(type='text/javascript', src='script/vinput.js')
+    iframe(name='sub', marginheight='0', width='0', height='0', frameborder='0', style='display:none;')

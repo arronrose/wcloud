@@ -1,0 +1,200 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='workphone.')
+    meta(name='keywords', content='workphone')
+    title 海云安全手机
+    link(rel='stylesheet', type='text/css', href='jquery-ui-1.8.23.custom/css/ui-lightness/jquery-ui-1.8.23.custom.css')
+    link(type='text/css', rel='stylesheet', href='style/control.css')
+    link(type='text/css', rel='stylesheet', href='style/admin.css')
+    link(type='text/css', rel='stylesheet', href='style/vinput.css')
+    link(type='text/css', rel='stylesheet', href='jqueryCustom/jquery.mCustomScrollbar.css')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-ui-1.8.23.custom.min.js')
+    script(type='text/javascript', src='jqueryCustom/jquery.mCustomScrollbar.concat.min.js')
+    script(type='text/javascript', src='script/mutilData.js')
+    script(type='text/javascript', src='script/control.js')
+    script(type='text/javascript', src='script/setCookie.js')
+    script(type='text/javascript', src='script/login_ad.js')
+    script(type='text/javascript', src='script/modernizr+2.0.3.js')
+
+  body
+    #wrap
+      header
+        a.toplogo
+          img(src='images/logo_ad.png' alt height='45')
+      div#jiancemens
+      div#main_jiancemen_contain
+        h1(style="padding-left:20px;") 检测门信息
+        br
+        table#jiancemen(width='90%' border='2px solid gray' align="center")
+          tr
+            td(width='30%' style="padding-left:10px;" )
+              div#contain_jiancemen_info
+                div.items
+                  label.eql 本次开启时间:
+                  label#jTurnOnTime
+                br
+                div.items
+                  label.eql 已通过人数:
+                  label#PassNum
+                br
+                div.items
+                  label.eql 报警人数:
+                  label#AlterNum
+                br
+                div.items
+                  label.eq1 包含检测门：
+                  label#jGroupDevId
+                br
+                div.items
+                  label.eq1 位置描述：
+                  label#jPosDe
+                br
+                div.items
+                  label.eql 组合备注:
+                  input(type='text')
+            td(width="100%")
+              div#contain_jiancemen_detials
+                #shebeiJS
+                  table#jiancemenTD(width="100%")
+                    colgroup
+                      col.col_1
+                      col.col_2
+                      col.col_3
+                      col.col_4
+                    tr(width='100%')
+                      th(id='thid',class='0',onclick='sortable(1,this.id)') 报警序号
+                      th(id='thidevid',class='0',onclick='sortable(2,this.id)') 设备号
+                      th(id='thtime',class='0',onclick='sortable(3,this.id)') TIME
+                      th(id='thpos',class='0',onclick='sortable(4,this.id)') 位置
+                #shebeiJD.jscroll
+                  .jscrollContainer
+                    table#jcmD.altTr(width="100%")
+                      colgroup
+                        col.col_1
+                        col.col_2
+                        col.col_3
+                        col.col_4
+                      tbody
+
+      br
+      br
+      br
+      br
+      div#weijizhans
+      div#main_weijizhan_contain
+        h1(style="padding-left:20px;") 伪基站信息
+        br
+        table#weijizhan(width='90%' border='2px solid gray' align="center")
+          tr
+            td(width='30%' style="padding-left:10px;")
+              div#contain_info
+                div.items
+                  label.eql 开机时间:
+                  label#wTurnOnTime
+                br
+                div.items
+                  label.eq1 包含伪基站:
+                  label#wGroupDev
+                br
+                div.items
+                  label.eq1 位置描述:
+                  label#wPosDe
+                br
+                div.items
+                  label.eql 组合备注:
+                  input(type='text')
+                br
+                table#butt(width='100%')
+                  tr
+                    td(align="left")
+                      button#SendMess.but(type='button' style='height=20px;width=100%;' onclick="sendMessInfo()") 发送短信
+                    td(align="right")
+                      button#FakeCall.but(type='button' style='height=20px;width=100px;' onclick="fakeCallInfo()" ) 伪造电话
+                table#butt1(width='100%')
+                  tr(align="center")
+                    td
+                      button#AddWhite.but(type='button' style="height=20px;width=100px;" onclick="addWhite()") 加入白名单
+            td(width='100%')
+              div#contain_detials
+                #shebeiWS
+                  table#wjz(width="100%")
+                    colgroup
+                      col.col_1
+                      col.col_2
+                      col.col_3
+                      col.col_4
+                      col.col_5
+                      col.col_6
+                      col.col_7
+                    tr
+                      th
+                        span(id='cselect_page',class="checkbox checkbox_uncheck",title="选择吸附设备")
+                      th(id='thid',class='0') 序号
+                      th(id='thjob',class='0') 基站
+                      th(id='thstatus',class='0') IMSI
+                      //th(id='thname',class='0') 手机号
+                      th(id='thimei',class='0') 制式
+                      th(id='thtelephone',class='0') 时间
+                      th(id='thstate',class='0') 状态
+                #shebeiWD.jscroll
+                  .jscrollContainer
+                    table#wjzD.altTr(width="100%")
+                      colgroup
+                        col.col_1
+                        col.col_2
+                        col.col_3
+                        col.col_4
+                        col.col_5
+                        col.col_6
+                        col.col_7
+                      tbody
+      div#back(style='display:none; POSITION:absolute; left:0; top:0; width:100%; height:100%; background-color:#F5F5DC;')
+      div#pop_mesInfo(style='display:none; POSITION:absolute; left:54%; top:60%;width:30%; margin-left:-300px; margin-top:-200px; border:1px solid #888; background-color:#DDDDDD; text-align:center')
+        label.form_title 发送短信
+        form#sendMes_form.basic-grey
+          p
+            label 伪造号码
+            input#purlMes_num(type='text', name='purl', value='', autocomplete='off',style='width:300px')
+          p
+            label 短信内容
+            input#purlMes(type='text', name='purl', value='', autocomplete='off',style='width:300px')
+          p.Lp
+            //span.floatL.gray 提示：网页将会在工作界面内开启。
+            button#sendMes(type='submit') 发送
+            button#cancleMes(type='button') 取消
+        //form#sendMes_form.basic-grey
+        //  div#sendMes_input_zone
+        //    fieldset
+        //      legend 发送内容
+        //      textarea#weizaotext(rows="30" cols="50")
+        //    div#button_zone
+        //      button#sendMes(type='submit') 提交
+        //      button#cancleMes(type='button') 取消
+
+      div#pop_fakeCall(style='display:none; POSITION:absolute; left:50%; top:80%;width:500px; margin-left:-300px; margin-top:-200px; border:1px solid #888; background-color:#DDDDDD; text-align:center')
+        label.form_title 伪造电话
+        form#fakeCall_form.basic-grey
+          //p
+          //  label 伪造对象
+          //  label#purlCall_num
+          p
+            label 伪造号码
+            input#purlCall(type='text', name='purl', value='', autocomplete='off',style='width:300px')
+          p.Lp
+            //span.floatL.gray 提示：网页将会在工作界面内开启。
+            button#sendCall(type='submit') 发送
+            button#cancleCall(type='button') 取消
+          //div#formCaller
+          //  p(algin='left')
+          //    label伪造对象:
+          //  p
+          //    label 拨打号码
+          //    input#callNum(type='text');
+          //div#button_zone
+          //  button#fakeCall(type='submit') 提交
+          //  button#cancleCall(type='button') 取消
+
+

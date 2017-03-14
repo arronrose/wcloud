@@ -1,0 +1,233 @@
+
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='workphone.')
+    meta(name='keywords', content='workphone')
+    title 海云安全手机
+    link(rel='shortcut icon', href='images/logo.png')
+    link(rel='stylesheet', type='text/css', href='jquery-ui-1.8.23.custom/css/ui-lightness/jquery-ui-1.8.23.custom.css')
+    link(type='text/css', rel='stylesheet', href='style/reset.css')
+    link(type='text/css', rel='stylesheet', href='jqueryCustom/jquery.mCustomScrollbar.css')
+    link(type='text/css', rel='stylesheet', href='style/admin.css')
+    link(type='text/css', rel='stylesheet', href='style/control.css')
+    link(type='text/css', rel='stylesheet', href='style/vinput.css')
+    link(type='text/css', rel='stylesheet', href='style/jquery.autocomplete.css')
+    script(type='text/javascript', src='script/modernizr+2.0.3.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-ui-1.8.23.custom.min.js')
+    script(type='text/javascript', src='script/setCookie.js')
+    script(type='text/javascript', src='jqueryCustom/jquery.mCustomScrollbar.concat.min.js')
+    script(type='text/javascript', src='script/jquery.autocomplete.js')
+  body
+    //(onContextMenu="return false")
+    #wrap
+      header
+        // 头部
+        a#toplogo
+          img(src='images/logo_ad.png', alt='', height='45')
+        nav#top
+          ul
+            // 头部的连接
+            li
+              a(href='/f_org_acc') 账户
+            li
+              a.navHover(href='/f_org_control') 多维管控
+            li
+              a(href='/f_org_home') 设备管理
+            li
+              a(href='/f_org_strategy') 策略配置
+            li
+              a(href='/f_org_contacts') 同步联系人
+            li
+              a(href='/f_org_mapp') 应用管理
+            li
+              a(href='/f_org_log') 查看日志
+            li
+              a(href='/f_org_statistics') 数据统计
+            li
+              a#logout(href='#') 退出
+      aside#controllist(style="border-right: 1px solid #eee;")
+        // 边栏
+        // workphone logo
+        ul#control_guanli
+          //.jscroll
+          #search_container_adm
+            input#searchadm.search(type='text',name='searchadm',width='30', height='20',placeholder='请输入姓名关键字')
+            button#searchadmBtn(onclick="search_adm()") 查询
+          li.firstLi
+            img.kao(src='images/home.png', width='20', height='20', alt='logo', style='position:absolute;top:3px;left:0;')
+            div.jscroll
+            // 管理员
+            ul#control_yic
+              // 小部门
+      article#control
+        // 右面的主体内容容器
+        section#main.main
+          // 主题内容 设备数据现实
+          #gnan
+            // 功能按钮区disabled="disabled"
+            button#control_xzqb(type='button') 选择全部
+            button#control_kcxz(type='button') 取消选择
+            button#control_delusers(type='button') 删除设备
+            a#popd.cb(href="#")
+            button#adddev(type='button' onclick="add_control(this)") 新增设备
+            button#jcm(type='button' onclick="cluster(this)") 检测门
+            button#wjz(type='button' onclick="cluster(this)") 伪基站
+            //button#zhgl(type='button')
+            //  a(href='/f_org_controlInfo' target="view_window" ) 综合管理
+            button#zhgl(type='button' onclick="controlinfohome(this)") 综合管理
+          #control_shebei
+            #control_shebeiH
+              table#control_ygt
+                // 这里是设备列表的头部
+                colgroup
+                  col.col_1
+                  col.col_2
+                  col.col_3
+                  col.col_4
+                  col.col_5
+                  col.col_6
+                  col.col_7
+                  col.col_8
+                tr
+                  //th
+                  //  span(id='select_page',class="checkbox checkbox_uncheck",title="选择本页用户")
+                  //th(id='thstatus',class='0',onclick='sortable(1,this.id)',title='点击按状态排序') 当前状态
+                  //th(id='thname',class='0',onclick='sortable(2,this.id)',title='点击按名称排序') 设备类别
+                  //th(id='thimei',class='0',onclick='sortable(3,this.id)',title='点击按设备号排序') 设备号
+                  //th(id='thtelephone',class='0',onclick='sortable(4,this.id)',title='点击按电话号码排序') 所属部门
+                  //th(id='thjob',class='0',onclick='sortable(5,this.id)',title='点击按职位/职称排序') 最近一次开机时间
+                  //th(id='thdepartment',class='0',onclick='sortable(6,this.id)',title='点击按部门排序') 位置描述
+                  //th(id='thactive',class='0',onclick='sortable(7,this.id)',title='点击按部门排序') 静态信息
+                  th
+                    span(id='select_page',class="checkbox checkbox_uncheck",title="选择本页用户")
+                  th(id='thstatus',class='0') 当前状态
+                  th(id='thname',class='0') 设备类别
+                  th(id='thimei',class='0') 设备号
+                  th(id='thtelephone',class='0') 所属单位
+                  th(id='thjob',class='0') 最近一次开机时间
+                  th(id='thdepartment') 位置描述
+                  th(id='thactive',class='0') 静态信息
+            #control_shebeiB.jscroll
+              // jscroll
+              .jscrollContainer
+                table#control_yglb.altTr
+                  // 设备列表的主体内容
+                  colgroup
+                    col.col_1
+                    col.col_2
+                    col.col_3
+                    col.col_4
+                    col.col_5
+                    col.col_6
+                    col.col_7
+                    col.col_8
+                  tbody
+        section#ditu
+          // 地图
+          #dituTab.tabtu
+            ul
+              li.firstLi
+                a.tabHover(href='javascript:;') 地图
+          #dituContent
+          // 地图容器
+        section#yxx
+          #xinxiTab.tab
+            ul
+              li.firstLi
+                a.tabHover(href='#xiCont') 详细资料
+              li
+                a(href='#whiteList') 白名单管理
+          #xList
+            #xiCont.jscroll.tabw
+              .jscrollContainer
+                table.altTr
+                  colgroup
+                    col.ban
+                    col.ban
+                  tbody
+            #whiteList.jscroll.tabw
+              .jscrollContainer
+                table.altTr
+                  colgroup
+                    col.ban
+                    col.ban
+                    col.ban
+                  tbody
+    div#op_admin(style='display:none')
+      label.form_title 新增设备
+      form#add_control_form.basic-grey
+        div#input_zone
+          fieldset
+            legend 基本信息
+              p
+                label(for='control_type') 设备类型
+                select#selecttype(name="selecttype")
+                  option(value="") 请选择搜索类型
+                  //option(value="status") 当前状态
+                  option(value="pseudo_bs") 伪基站
+                  option(value="safe_gate") 检测门
+              p
+                label(for='control_uid') 设备号
+                input#control_uid(type='text', name='control_uid')
+              p
+                label(for='control_institute') 所属单位
+                input#control_institute(type='text', name='control_institute')
+        div#button_zone
+          button#add_controlsend(type='submit') 提交
+          button#add_controlexit(type='button') 取消
+    #popceng
+      div#back(style='display:none; POSITION:absolute; left:0; top:0; width:100%; height:100%; background-color:#F5F5DC;')
+      div#xiugaigonglv(style='display:none; POSITION:absolute; left:54%; top:95%; width:30%; margin-left:-300px; margin-top:-200px; border:1px solid #888; background-color:#DDDDDD; text-align:center')
+        label.form_title 修改功率
+        br
+        br
+        form#modgonglv
+          p
+            label 工作功率
+            input#gonglv(type='text', name='purl', value='', autocomplete='off',)
+          //p
+          //  label 工作半径
+          //  input#banjing(type='text', name='purl', value='', autocomplete='off',)
+          br
+          p.Lp
+            //span.floatL.gray 提示：网页将会在工作界面内开启。
+            button#sendpower.Lbtn(type='submit') 发送
+            button#cancelpower.Lbtn(type='button') 取消
+          br
+      div#xiugaibanjing(style='display:none; POSITION:absolute; left:54%; top:95%; width:30%; margin-left:-300px; margin-top:-200px; border:1px solid #888; background-color:#DDDDDD; text-align:center')
+        label.form_title 修改半径
+        br
+        br
+        form#modbangjing
+          p
+            label 工作半径
+            input#banjing(type='text', name='purl', value='', autocomplete='off',)
+          br
+          //p
+          //  label 工作半径
+          //  input#banjing(type='text', name='purl', value='', autocomplete='off',)
+          p.Lp
+            //span.floatL.gray 提示：网页将会在工作界面内开启。
+            button#sendradius.Lbtn(type='submit') 发送
+            button#cancelradius.Lbtn(type='button') 取消
+          br
+      #control_delete.dialog(title='基站设备删除')
+        form#control_lsscyh
+          p 此操作会将用户有关的所有信息都清除，是否要继续？
+          p.centerBtn.Lp.xl
+            button#control_sScyh.Lbtn(type='submit') 是
+            button#control_bScyh.Lbtn(type='button') 否
+    script(type='text/javascript', src='script/tool.js')
+    script(type='text/javascript', src='http://api.map.baidu.com/api?key=&v=1.1&services=80ca255d6d2f3660b9dc9ecba59010b0')
+    script(type='text/javascript', src='script/Bmap.js')
+    script(type='text/javascript', src='script/login_ad.js')
+    script(type='text/javascript', src='script/tool.js')
+    script(type='text/javascript', src='script/strategy.js')
+    script(type='text/javascript', src='script/vinput.js')
+    script(type='text/javascript', src='script/main.js')
+    script(type='text/javascript', src='script/acc.js')
+    script(type='text/javascript', src="script/Code.js")
+    //script(type='text/javascript', src="script/control.js")

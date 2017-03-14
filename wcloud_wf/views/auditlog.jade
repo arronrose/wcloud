@@ -1,0 +1,122 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='workphone.')
+    meta(name='keywords', content='workphone')
+    title 海云安全手机-审计员
+    link(rel='shortcut icon', href='images/logo.png')
+    link(rel='stylesheet', type='text/css', href='jquery-ui-1.8.23.custom/css/ui-lightness/jquery-ui-1.8.23.custom.css')
+    link(type='text/css', rel='stylesheet', href='style/reset.css')
+    link(type='text/css', rel='stylesheet', href='jqueryCustom/jquery.mCustomScrollbar.css')
+    link(type='text/css', rel='stylesheet', href='style/admin_master.css')
+    link(type='text/css', rel='stylesheet', href='style/vinput.css')
+    script(type='text/javascript', src='script/modernizr+2.0.3.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-ui-1.8.23.custom.min.js')
+    script(type='text/javascript', src='script/setCookie.js')
+    script(type='text/javascript', src='jqueryCustom/jquery.mCustomScrollbar.concat.min.js')
+  body
+    #wrap
+      header
+        // 头部
+        a#toplogo
+          img(src='images/logo_ad.png', alt='', height='45')
+        nav#top
+          ul
+            // 头部的连接
+            li
+              a(href='/f_org_auditor') 审计员账户
+            li
+              a(href='/f_org_auditor_list') 审计员管理
+            li
+              a.navHover(href='/f_org_auditlog') 日志审计
+            li
+              a#logout(href='#') 退出
+
+      div#auditlog_man
+        #auditlog_g
+          button#searchlog(type='button') 审计日志检索
+          button#ex2excel(type='button') 审计报告生成
+          button#logspace(type='button') 审计日志空间
+          button#shuaxin_log(type='button') 审计日志刷新
+
+        #auditlog_c
+          #auditlogH
+            table#au_srH
+              colgroup
+                col.col_1
+                col.col_2
+                col.col_3
+                col.col_4
+                col.col_5
+                col.col_6
+              tr
+                th(rowspan=2) 序号
+                th(rowspan=2) 操作时间
+                th(rowspan=2) 操作者
+                th(rowspan=2) 操作类型
+                th(rowspan=2) 操作描述
+                th(rowspan=2) 操作结果
+
+          #auditlogB.jscroll
+            .jscrollContainer
+              table#au_stB.altTr
+                colgroup
+                  col.col_1
+                  col.col_2
+                  col.col_3
+                  col.col_4
+                  col.col_5
+                  col.col_6
+                tbody
+
+    div#auditlog_con(style='display:none')
+      #auditlog_N
+        h2 生成审计报告
+        p
+          span 安全员帐号:
+            input#auditlog_sazh(type='text',name='auditlog_sazh')
+          span 安全员密码:
+            input#auditlog_sapw(type='password',name='auditlog_sapw')
+        p
+          span 提示：请先检索您需要的审计日志，再将其生成审计报告。
+        button#audit_sure 确定
+        button#exitlog 取消
+
+    div#searchlog_con(style='display:none')
+      #auditlog_N
+        h2#auditlogsearch 检索审计日志
+        p
+          span 开始时间:
+            input#log_start_time(type='text',name='start_time',onfocus='setDayHM(this)')
+          span 结束时间:
+            input#log_end_time(type='text',name='end_time',onfocus='setDayHM(this)')
+        p
+          span 操作者:
+            input#operator_log(type='text', name='operator_log')
+          span 检索条数:
+            input#log_number(type='text', name='log_number')
+        button#logsearch 检索
+        button#exitlog 取消
+
+    div#logspace_con(style='display:none')
+        #logspace_N
+            h2#logspace 审计日志空间
+            p
+                span 当前审计空间大小:
+                    span#currentspace.xiang
+                span 当前阈值:
+                    span#currentlimit.xiang
+            p
+                span 设置阈值:
+                    input#log_space_set(type='text', name='log_space_set')
+                span kb
+            button#setspace 设置
+            button#exitlog 取消
+
+    script(type='text/javascript', src='script/login_ad.js')
+    script(type='text/javascript', src='script/vinput.js')
+    script(type='text/javascript', src='script/main.js')
+    script(type='text/javascript', src='script/auditor.js')
+    script(type='text/javascript', src='script/strategy.js')

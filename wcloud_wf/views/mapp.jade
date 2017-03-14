@@ -1,0 +1,149 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='workphone.')
+    meta(name='keywords', content='workphone')
+    title 海云安全手机
+    link(rel='shortcut icon', href='images/logo.png')
+    link(type='text/css', rel='stylesheet', href='style/reset.css')
+    link(type='text/css', rel='stylesheet', href='jqueryCustom/jquery.mCustomScrollbar.css')
+    link(type='text/css', rel='stylesheet', href='style/admin.css')
+    link(rel='stylesheet', type='text/css', href='style/setLDAP.css')
+    link(rel='stylesheet', type='text/css', href='style/vinput.css')
+    link(type='text/css', rel='stylesheet', href='style/jquery.autocomplete.css')
+    script(type='text/javascript', src='script/modernizr+2.0.3.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='script/setCookie.js')
+    script(type='text/javascript', src='jqueryCustom/jquery.mCustomScrollbar.concat.min.js')
+    script(type='text/javascript', src='script/main.js')
+    script(type='text/javascript', src='script/jquery.autocomplete.js')
+  body
+    #wrap
+      header
+        // 头部
+        a#toplogo
+          img(src='images/logo_ad.png', alt='', height='45')
+        nav#top
+          ul
+            // 头部的连接
+            li
+              a(href='/f_org_acc') 账户
+            li
+              a(href='/f_org_home') 设备管理
+            li
+              a(href='/f_org_strategy') 策略配置
+            li
+              a(href='/f_org_contacts') 同步联系人
+            li
+              a.navHover(href='/f_org_mapp') 应用管理
+            li
+              a(href='/f_org_log') 查看日志
+            li
+              a(href='/f_org_statistics') 数据统计
+            li
+              a#logout(href='#') 退出
+      aside#mapp
+        ul#guanli
+          //.jscroll
+          #search_container_adm
+            input#searchadm.search(type='text',name='searchadm',width='30', height='20',placeholder='请输入姓名关键字')
+            button#searchadmBtn(onclick="search_adm()") 查询
+          li.firstLi
+            img.kao(src='images/home.png', width='20', height='20', alt='logo', style='position:absolute;top:3px;left:0;')
+            div.jscroll
+            // 管理员
+            ul#yic
+            // 小部门
+      article#app.unpad
+        // 右面的主体内容容器
+        section.main
+          // 主题内容 设备数据现实
+          #gnan.gnan
+            // 功能按钮区
+            button#appxz(type='button') 选择全部
+            button#appkc(type='button') 取消选择
+            a#popsend.cb(href="#")
+            button#sendapps(type='button') 推送应用
+            input#appgu(type='text', placeholder='按关键字过滤')
+            button#shanchu.err(type='submit' onclick="delapp()") 删除应用
+            button#wles.letb(type='button') 新增应用
+          #appxinxi
+            #appH
+              table
+                // 这里是设备列表的头部
+                colgroup
+                  col.col_7_1
+                  col.col_7_2
+                  col.col_7_3
+                  col.col_7_4
+                  col.col_7_5
+                  col.col_7_6
+                  col.col_7_7
+                  col.col_7_8
+                  col.col_7_9
+                tr
+                  th
+                  th 应用名称
+                  th 版本
+                  th 应用类型
+                  th 更新时间
+                  th 备注
+                  th
+                  th
+                  th
+            #appB.jscroll
+              // jscroll
+              .jscrollContainer
+                table#appTb.altTr
+                  // 设备列表的主体内容
+                  colgroup
+                    col.col_7_1
+                    col.col_7_2
+                    col.col_7_3
+                    col.col_7_4
+                    col.col_7_5
+                    col.col_7_6
+                    col.col_7_7
+                    col.col_7_8
+                    col.col_7_9
+                  tbody
+          //p.appbtn
+          //  button#shanchu.err 删除应用
+    .cppUp
+        .tit
+          span.x X
+          h6#lestou 上传应用
+        form#upApp(name='upApp', target='sub', method='post', action='/f_upApp', enctype="multipart/form-data")
+          .bkq
+            p.wb
+              label(for='appName') 应用名称：
+              input#appName(type='text', name='appName')
+              input#lesTy(type='hidden', name='lesTy')
+            p
+              label(for='lei') 应用类型：
+              select#lei(name='lei')
+                option#leswork(value='workapp') 移动办公
+                option#lescomu(value='communicate') 社交通讯
+                option#lessafe(value='safeapp') 安全套件
+                option#lessyst(value='systemapp') 系统工具
+            p.nat
+              label(for='apks') 上传文件：
+              input#apks(type='text', name='apks')
+              input#apll(type='file', name='apll')
+              a#abb(href='javascript:;')
+            p.wb
+              label(for='url') URL：
+              input#url.url(type='text' name='url')
+            p
+              label(for='mark') 备注：
+              textarea#mark(type='text', name='mark')
+            p.centerBtn
+              button(type='submit') 提交
+              button.err(type='button') 取消
+
+
+    script(type='text/javascript', src='script/login_ad.js')
+    script(type='text/javascript', src='script/apd.js')
+    script(type='text/javascript', src='script/vinput.js')
+    iframe(name='sub',marginheight='0', width='0', height='0', frameborder='0', style='display:none;')

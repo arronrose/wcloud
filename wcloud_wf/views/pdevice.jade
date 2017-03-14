@@ -1,0 +1,164 @@
+extends playout
+
+block content
+    #wrapper
+      header#hm
+        .floatL
+        a(href='http://www.singuloid.com/' target='_blank')
+            img#logo(alt='workPhone', src='images/logo.png')
+          #zhangHu
+            #currentZh
+              a(href='#')
+                img#zhT(src='images/user.png', alt='')
+                span #{dev_id}
+        .floatR
+          ul#tu.floatL
+            li#update 上次更新时间：#{dev_id}
+            //li
+              img(src='images/baterry.png')
+            //li
+              img(src='images/00.png')
+            //li
+              img(src='images/xinhao.png')
+            //li
+              img.lastImg(src='images/dianchi.png')
+          #acc.floatL
+            span#zhanghao #{dev_id}
+            ul#lb
+              // 弹出层
+              li
+                a.cb(href='#gaimi') 更改密码
+              //li
+                a.cb(href='#pianhao') 偏好设定
+              li
+                a#dengchu(href='/') 登出
+          a#reload(href="")
+            img(src='images/shuaxin.png', alt='workphone' title='刷新')
+      nav
+        ul
+          li
+            a.here(href='#device') 管理设备
+          li
+            a(href='#app') 应用程序
+          li
+            a(href='#details') 详细资料
+      #device.tab
+        ul#deviceManage
+          li
+            a#tslj.cb(href='#tuisong') 推送链接
+          li
+            a#sd.cb(href='#suoding') 锁定
+          li
+            a#cs.cb(href='#Bell') 启动响铃追踪
+          li
+            a#qc.cb(href='#qingchu') 清除工作数据
+          li
+            a#qs.cb(href='#spmima') 重设锁屏密码
+        #dituContent
+      #infoBtn.tab
+        a.hide
+        a.show
+      #details.tab
+      #app.tab
+      #wei
+        a.floatR.cb(href='#guanyu') 关于我们
+        img(src='images/weixin.png', alt='weixin')
+        a#weixin.cb(href='#wxew') 欢迎关注我们的“海云安全手机“微信公共帐号
+      // 初始化地图
+      script(type='text/javascript', src='http://api.map.baidu.com/api?key=&v=1.1&services=80ca255d6d2f3660b9dc9ecba59010b0')
+      script(type='text/javascript', src='script/Bmap.js')
+    #tanceng
+      #loadingStatus loading...
+      #tuisong.dialog(title='发送网址')
+        div
+          p
+            label(for='purl') URL:
+            input#purl(type='text', name='purl', value='', autocomplete='off')
+          p.Lp
+            //span.floatL.gray 提示：网页将会在工作界面内开启。
+            button#urlSub.floatR.Lbtn(type='button', name='urlSub') 发送
+      #suoding.dialog(title='锁定')
+        p 这将锁定工作角色并强制您在重新使用海云安全手机前输入密码。是否要继续？
+        .note
+          //p Noto:
+          //p -Command will be enforced once Workphone connnect with our servers.
+        p.centerBtn.Lp
+          button#sSuoding.Lbtn(type='button') 是
+          button#bSuoding.Lbtn(type='button') 否
+      #qingchu.dialog(title='清除工作数据')
+        p 清除您的工作资料，而您的个人资料将会保留。
+        //.note
+
+          p Noto:
+          p -Command will be enforced once Workphone connnect with our servers.
+        p.centerBtn.Lp
+          button#sqingchu.Lbtn(type='button') 是
+          button#bqingchu.Lbtn(type='button') 否
+
+      #Bell.dialog(title='手机响铃')
+        p 这将使您的设备大声响闹。
+        //.note
+          p Noto:
+          p -Command will be enforced once Workphone connnect with our servers.
+        p.centerBtn.Lp.xl
+          button#sBell.Lbtn(type='button') 是
+          button#bBell.Lbtn(type='button') 否
+
+      #spmima.dialog(title='重设锁屏密码')
+        div
+          //p
+            label(for='jmm') 旧密码：
+            input#jmm(type='password', name='jmm', value='')
+          p
+            label(for='spxim') 新密码：
+            input#spxim(type='password', name='spxim', value='',autocomplete='off',maxlength='4')
+          p
+            label(for='qxspmi') 确认密码：
+            input#qxspmi(type='password', name='qxspmi', value='',autocomplete='off',maxlength='4')
+          p.rightBtn.Lp
+            button#spshemi.Lbtnc(type='button') 设立密码
+      #gaimi.dialog(title='新密码')
+        div
+          p
+            label(for='jmm') 旧密码：
+            input#jmm(type='password', name='jmm', value='',autocomplete='off',maxlength='16')
+          p
+            label(for='xim') 新密码：
+            input#xim(type='password', name='xim', value='',autocomplete='off',maxlength='16')
+          p
+            label(for='qxim') 确认密码：
+            input#qxim(type='password', name='qxim', value='',autocomplete='off',maxlength='16')
+          //p 
+            label(for='yzm') 输入验证码：
+            input#yzm(type='text' value='',autocomplete='off')
+            span 不区分大小写
+          //p
+            img#yanz(src='' alt='' width='112' height='38')
+            a#huan(href="javascript:;") 看不清换一张
+          p.rightBtn.Lp
+            button#shemi.Lbtnc(type='button') 设立密码
+      #pianhao.dialog(title='偏好设定')
+        form
+          p
+            label 语言
+            select
+              option(value='') 中文
+              option(value='') 英文
+              option(value='') 日文
+          p
+            label(for='dt') 允许动态特效
+            input#dt(type='checkbox', name='dt')
+          p.rightBtn.Lp
+            //button.Lbtn(type='button') 取消
+            button#bpianhao.Lbtn(type='button') 保存
+      #guanyu.dialog(title='关于海云安全手机')
+        #aboutWp
+          p.gray © 2013 Singuloid Technology Ltd., 版权所有.
+          p 版本： 1.0
+          p 电邮：
+            a.yellow(href='mailto: support@singuloid.com')  support@singuloid.com
+      // 
+      #wxew.dialog(title='海云安全手机二维码')
+        img#wxzh(src='images/qrcode_for_gh_c70773cffa12_258.jpg', alt='weixin')
+    script(type='text/javascript', src='script/pglobal.js')
+    script(type='text/javascript', src='script/preloadother.js')

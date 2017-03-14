@@ -1,0 +1,136 @@
+﻿!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='workphone.')
+    meta(name='keywords', content='workphone')
+    title 海云安全手机
+    link(rel='shortcut icon', href='images/logo.png')
+    link(rel='stylesheet', type='text/css', href='jquery-ui-1.8.23.custom/css/ui-lightness/jquery-ui-1.8.23.custom.css')
+    link(type='text/css', rel='stylesheet', href='style/reset.css')
+    link(type='text/css', rel='stylesheet', href='jqueryCustom/jquery.mCustomScrollbar.css')
+    link(type='text/css', rel='stylesheet', href='style/admin.css')
+    link(type='text/css', rel='stylesheet', href='style/vinput.css')
+    script(type='text/javascript', src='script/modernizr+2.0.3.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-ui-1.8.23.custom.min.js')
+    script(type='text/javascript', src='script/setCookie.js')
+    script(type='text/javascript', src='jqueryCustom/jquery.mCustomScrollbar.concat.min.js')
+  body
+    #wrap
+      header
+        // 头部
+        a#toplogo
+          img(src='images/logo_ad.png', alt='', height='45')
+        nav#top
+          ul
+            // 头部的连接
+            li
+              a(href='/f_org_acc') 账户
+            li
+              a(href='/f_org_home') 设备管理
+            li
+              a(href='/f_org_strategy') 策略配置
+            li
+              a(href='/f_org_contacts') 同步联系人
+            li
+              a(href='/f_org_mapp') 应用管理
+            li
+              a.navHover(href='/f_org_log') 查看日志
+            li
+              a(href='/f_org_statistics') 数据统计
+            li
+              a#logout(href='#') 退出
+      div#log_main
+        // 右面的主体内容容器
+        #log_options
+          label 管理员信息：
+          lable#admin_id
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          label(for='op_type') 操作类型：
+          select#op_type(name='op_type') 操作类型
+            //option(value='strategy') 策略管控
+            //option(value='cmd') 指令管控
+            option(value='all' selected='true') 请选择
+            option(value='contact') 同步联系人
+            option(value='login') 登录日志
+            //option(value='strategy') 应用管理
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          label(for='op_user') 操作人：
+          input#op_user(type='text') 操作人
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          label(for='start_time') 开始时间：
+          input#start_time(type='text',onfocus='setDayHM(this)')
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          label(for='end_time') 结束时间：
+          input#end_time(type='text',onfocus='setDayHM(this)')
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          span#search
+            img(src='images/search.png', alt='')
+          button#download_adlogs(type="button" style="float:right") 下载
+        #log_container
+          #log_header
+            table#log_hcol
+              colgroup
+                col.col_1
+                col.col_2
+                col.col_3
+                col.col_4
+                col.col_5
+                col.col_6
+              tr
+                th(rowspan=2) 操作人
+                th(rowspan=2) 操作类型
+                th(rowspan=3) 操作时间
+                th(rowspan=3) 操作对象
+                th(rowspan=3) 操作内容
+                th(rowspan=2) 操作结果
+
+          #log_body.jscroll
+            .jscrollContainer
+              table#log_bcol.altTr
+                // 设备列表的主体内容
+                colgroup
+                  col.col_1
+                  col.col_2
+                  col.col_3
+                  col.col_4
+                  col.col_5
+                  col.col_6
+                tbody
+        #log_notice
+          span#log_bottom_title(value=0) 共0页，0条日志信息
+          span#logs_perpage(value=0)
+          .bottom_title
+            a#log_first_page 首页
+            a#log_pre_page 上一页
+            span 第
+              input#log_page_number(type="text",value=0,onchange="log_page_change(this.value)")
+              页
+            a#log_next_page 下一页
+            a#log_end_page 末页
+
+    #log_pop
+      #contacts_container.contacts_container
+          #contacts_content_notice.content_notice
+            p#content_title.notice_ex 通讯录内容如下
+          #contacts_content.content
+            ul#content_tree
+          #contacts_content_btn
+            button#log_ok.Lbtn(type='submit') 确定
+
+    #log_user_pop
+      #control_user_container.contacts_container
+          #control_user_notice.content_notice
+            p#control_user_title.notice_ex 作用人群如下
+          #control_user_content.content
+            ul#control_user_tree
+          #contacts_content_btn
+              button#control_user_ok.Lbtn(type='submit') 确定
+
+
+    script(type='text/javascript', src='script/login_ad.js')
+    script(type='text/javascript', src='script/strategy.js')
+    script(type='text/javascript', src='script/log.js')
+    script(type='text/javascript', src='script/Code.js')
+    script(type='text/javascript', src='http://api.map.baidu.com/api?v=2.0&ak=2bfMMwcMpQQeS4ci3BB9AmUl')

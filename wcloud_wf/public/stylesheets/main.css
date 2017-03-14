@@ -1,0 +1,317 @@
+body{
+	font: 100%/1.2 "Adobe Heiti Std R",Arial, sans-serif,"HelveticaNeue", "Helvetica Neue", Helvetica;
+	text-align: left;
+	color: #383838;
+	background: #eaeaea;
+}
+.ui-loader{
+	display: none;
+}
+.ui-input-clear{
+	display: none;
+}
+a,a:link{
+	color: #383838;
+	text-decoration: none;
+}
+a:active{
+	opacity: .6;
+}
+a:visited{
+	color: #383838;
+	text-decoration: none;
+}
+h1{
+	font-size: 1.3rem;
+}
+h2{
+	font-size: 1.3rem;
+}
+p{
+	font-size: .9rem;
+}
+.small{
+	font-size: .7rem;
+}
+a.btn_download,a.btn_download:visited{
+	color: #fff !important;
+	text-shadow:none !important;
+	font-size: .7rem;
+	line-height: 2em;
+	width: 7em;
+	background: #8fc06e;
+	-wekit-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	display: inline-block;
+	text-align: center;
+}
+a.btn_download:active,a.btn_download:hover{
+	background: #a1d57d !important;
+}
+a.btn_install{
+	background: #4f97c7;
+	color: #fff !important;
+	text-shadow:none !important;
+	font-size: .7rem;
+	line-height: 2em;
+	width: 7em;
+	-wekit-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	display: inline-block;
+	text-align: center;
+}
+a.btn_install:active{
+	background: #62adde;
+}
+a.btn_disabled,a.btn_disabled:hover,a.btn_disabled:active{
+	color: #fff !important;
+	text-shadow:none !important;
+	font-size: .7rem;
+	line-height: 2em;
+	width: 7em;
+	-wekit-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	display: inline-block;
+	text-align: center;
+	background: #b1bac0 !important;
+	box-shadow: 1px 1px #b1bac0;
+	cursor: default;
+}
+.active{
+	color: green;
+}
+.tabP{
+	display: none;
+}
+.default{
+	display: block;
+}
+.tabP,#mainPage{
+	width: 100%;
+	min-height: 100%;
+	background: #eaeaea;
+}
+#container{
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+}
+#mainContainer{
+	width: 100%;
+	background: rgba(0,0,0,0);
+	position: relative;
+	overflow-x:hidden;
+}
+#mainPage{
+	-webkit-transition:left .4s ease-in-out;
+	transition:left .4s ease-in-out;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#mainMenuContainer{
+	background: rgba(0,0,0,0);
+}
+#menu{
+	width: 160px;
+	min-height: 100%;
+	background: #454550;
+}
+#menu a{
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-size: 1.2rem;
+	line-height: 2.5em;
+	color: #a3a9b7;
+}
+#menu a.active{
+	color: #3e6787 !important;
+	background: #2d2d38;
+
+}
+/*应用商店部分*/
+.top{
+	overflow: hidden;
+	padding: 1em 2.77777%;
+	background: #4f97c7;
+}
+.zhu{
+	float: left;
+	width: 30px;
+	overflow: hidden;
+}
+.top h1{
+	float: left;
+	padding-left: 2.77777%;
+	color: #fff;
+	line-height: 30px;
+	vertical-align: middle;
+}
+.top img{
+	width: 100%;
+	vertical-align: middle;
+}
+.top .bk{
+	color: #fff;
+	font-weight: bolder;
+	width: 20px;
+	float: left;
+}
+.bk img{
+	width: 75%;
+	max-width: 15px;
+	padding-right: 25%;
+}
+.fdj{
+	float: right;
+	width: 30px;
+}
+.tou{
+	margin-bottom: .2em;
+	padding: 1em 2.77777%;
+}
+.tou a{
+	float: right;
+	margin-top: .4rem;
+	text-decoration: underline;
+	color: #454545;
+}
+.threeList,.oneList{
+	background: #fff;
+	border: 1px solid #dcdcdc;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-ms-border-radius:5px;
+	-o-border-radius:5px;
+	border-radius:5px;
+}
+.threeList:active,.oneList:active{
+	opacity: .8;
+}
+.threeCon{
+	overflow: hidden;
+}
+.threeList{
+	margin: 2px 0 2.77777% 2.77777%;
+	text-align: center;
+	width: 29.64%;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+	float: left;
+	padding: .8em 0 .5em 0;
+}
+.threeList .photo{
+	margin-bottom: .2em;
+}
+.threeList .name{
+	margin-bottom: 1em;
+}
+.threeList .disc{
+	margin-bottom: .3em;
+}
+.threeList .photo img{
+	width: 50%;
+	max-width: 94px;
+}
+#myAppMenu{
+	padding-left: 2.7777%;
+	margin: 1em 0;
+	overflow: hidden;
+}
+#myAppMenu a{
+	margin-left: -1px;
+	color: #383838;
+	border: 1px solid #4f97c7;
+	line-height: 1.7em;
+	padding: 0 1.2em;
+	float: left;
+}
+.left_btn{
+	-webkit-border-top-left-radius:2px;
+	border-top-left-radius:2px;
+	-webkit-border-bottom-left-radius:2px;
+	border-bottom-left-radius:2px;
+}
+.right_btn{
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+#myAppMenu a:active,#myAppMenu a.active{
+	background: #4f97c7;
+	color: #fff;
+}
+.oneList{
+	padding: 1em .8em 1.5em .8em;
+	margin: 0 2.7777% 2.7777% 2.7777%;
+	overflow: hidden;
+}
+.oneList .photoc{
+	float: left;
+	width: 22.2873%;
+}
+.oneList .photoc img{
+	width: 100%;
+	max-width: 3.5rem;
+}
+.oneList .discB{
+	float: left;
+	width: 50.4827%;
+}
+.oneList .discB p{
+	text-indent: .5em;
+}
+.oneList .discB .name{
+	margin-bottom: 1em;
+	font-size: 1.2rem;
+}
+.oneList .btn{
+	float: right;
+	width: 27.2299%;
+	text-align: right;
+	padding-top: 1.1em;
+}
+.oneList .btn a{
+}
+#scg{
+	margin-bottom: 2.7%;
+}
+#scg .fdj{
+	float: left;
+}
+#scg #qxl{
+	float: right;
+	color: #fff;
+	margin-top: 6px;
+}
+#shc{
+	margin: 6px 2.5em;
+	border-bottom: 1px solid rgba(255,255,255,.6);
+}
+#shc input{
+	border: none;
+	font-size: 1rem;
+	color: #f0f0f0;
+	background: transparent;
+	display: block;
+	overflow: hidden;
+	width: 100%;
+}
+#scg input:focus{
+	outline: none;
+}
+*{
+	-webkit-tap-highlight-color: rgba(255,0,0,0) !important;
+}

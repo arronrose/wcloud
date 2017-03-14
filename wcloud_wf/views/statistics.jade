@@ -1,0 +1,156 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='workphone.')
+    meta(name='keywords', content='workphone')
+    title 海云安全手机
+    link(rel='shortcut icon', href='images/logo.png')
+    link(type='text/css', rel='stylesheet', href='style/reset.css')
+    link(type='text/css', rel='stylesheet', href='jqueryCustom/jquery.mCustomScrollbar.css')
+    link(type='text/css', rel='stylesheet', href='style/admin.css')
+    link(type='text/css', rel='stylesheet', href='style/vinput.css')
+    link(type='text/css', rel='stylesheet', href='style/setLDAP.css')
+    link(type='text/css', rel='stylesheet', href='style/statistics.css')
+    link(type='text/css', rel='stylesheet', href='style/jquery.autocomplete.css')
+    script(type='text/javascript', src='script/modernizr+2.0.3.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='script/setCookie.js')
+    script(type='text/javascript', src='jqueryCustom/jquery.mCustomScrollbar.concat.min.js')
+    script(type='text/javascript', src='script/main.js')
+    script(type='text/javascript', src='script/echarts.common.min.js')
+    script(type='text/javascript', src='script/jquery.autocomplete.js')
+  body
+    #wrap
+      header
+        // 头部
+        a#toplogo
+          img(src='images/logo_ad.png', alt='', height='45')
+        nav#top
+          ul
+            // 头部的连接
+            li
+              a(href='/f_org_acc') 账户
+            li
+              a(href='/f_org_home') 设备管理
+            li
+              a(href='/f_org_strategy') 策略配置
+            li
+              a(href='/f_org_contacts') 同步联系人
+            li
+              a(href='/f_org_mapp') 应用管理
+            li
+              a(href='/f_org_log') 查看日志
+            li
+              a.navHover(href='/f_org_statistics') 数据统计
+            li
+              a#logout(href='#') 退出
+      aside#user_container
+          ul#user_tree
+            #search_container_adm
+              input#searchadm.search(type='text',name='searchadm',width='30', height='20',placeholder='请输入姓名关键字')
+              button#searchadmBtn(onclick="search_adm()") 查询
+            li.firstLi
+              img.kao(src='images/home.png', width='20', height='20', alt='logo', style='position:absolute;top:3px;left:0;padding-top:10px;')
+              div.jscroll
+              // 管理员
+              ul#yic
+      article
+          section#top_zone.zone_border
+            #base_info_zone
+              .title_bar
+                label.title 基础信息
+              #base_info_table.jscroll
+                .jscrollContainer
+                    table#base_info_tab
+                        // 设备列表的主体内容
+                        tbody
+                            tr
+                                td
+                                    label 群组名称：
+                                td
+                                    label#ou_name
+                                    input(type="hidden")#oudn
+                            tr
+                                td
+                                    label 总人数：
+                                td
+                                    label#user_num
+                            tr
+                                td
+                                    label 激活设备：
+                                td
+                                    label#live_dev_num
+                            tr
+                                td
+                                    label 当前在线人数：
+                                td
+                                    label#live_user_num
+                            tr
+                                td
+                                    label 总开卡天数：
+                                td
+                                    label#sum_use_days
+                            tr
+                                td
+                                    label 平均开卡天数：
+                                td
+                                    label#avg_use_days
+                            tr
+                                td
+                                    label 总活跃天数：
+                                td
+                                    label#sum_live_days
+                            tr
+                                td
+                                    label 平均活跃天数：
+                                td
+                                    label#avg_live_days
+                            tr
+                                td
+                                    label 平均活跃度：
+                                td
+                                    label#avg_liveness
+                            tr
+                                td
+                                    label 活跃度大于50%人数：
+                                td
+                                    label#above_half_liveness
+
+            #liveness_zone
+                .title_bar
+                    label.title 历史活跃度人数统计图
+                .tool_bar
+                    .tools
+                      //form.selection
+                      //  label 统计规则
+                      //  select#analysis_rule
+                      //      option(value=10 selected='true') 活跃天数>10天
+                      //      option(value=20) 活跃天数>20天
+                #pie_chart.pie
+
+          section#bottom_zone.zone_border
+              #onlinedays_zone.zone_border
+                  .title_bar
+                      label.title 用户在线情况统计图
+                  .tool_bar
+                      .tools
+                        form.selection
+                          label 统计时间
+                          select#year(type='text',name='year')
+                          label 年
+                          select#month(type='text',name='month')
+                          label 月
+                          &nbsp;&nbsp;&nbsp;&nbsp;
+                          label 统计目标
+                          select#target
+                              option(value="per_day_liveness" selected='true') 每天活跃人数
+                              //option(value="per_week_liveness") 每周活跃人数
+                              option(value="per_month_liveness") 每月活跃人数
+                  #line_chart
+
+
+    script(type='text/javascript', src='script/login_ad.js')
+    script(type='text/javascript', src='script/statistics.js')
+    script(type='text/javascript', src='script/vinput.js')
+

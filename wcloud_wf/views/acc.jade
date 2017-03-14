@@ -1,0 +1,204 @@
+﻿!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='workphone.')
+    meta(name='keywords', content='workphone')
+    title 海云安全手机
+    link(rel='shortcut icon', href='images/logo.png')
+    link(type='text/css', rel='stylesheet', href='style/reset.css')
+    link(type='text/css', rel='stylesheet', href='jqueryCustom/jquery.mCustomScrollbar.css')
+    link(type='text/css', rel='stylesheet', href='style/admin.css')
+    link(type='text/css', rel='stylesheet', href='style/vinput.css')
+    link(type='text/css', rel='stylesheet', href='style/setLDAP.css')
+    script(type='text/javascript', src='script/modernizr+2.0.3.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='script/setCookie.js')
+    script(type='text/javascript', src='jqueryCustom/jquery.mCustomScrollbar.concat.min.js')
+    script(type='text/javascript', src='script/main.js')
+  body
+    #wrap
+      header
+        // 头部
+        a#toplogo
+          img(src='images/logo_ad.png', alt='', height='45')
+        nav#top
+          ul
+            // 头部的连接
+            li
+              a.navHover(href='/f_org_acc') 账户
+            li
+              a(href='/f_org_home') 设备管理
+            li
+              a(href='/f_org_strategy') 策略配置
+            li
+              a(href='/f_org_contacts') 同步联系人
+            li
+              a(href='/f_org_mapp') 应用管理
+            li
+              a(href='/f_org_log') 查看日志
+            li
+              a(href='/f_org_statistics') 数据统计
+            li
+              a#logout(href='#') 退出
+      aside
+        // 边栏
+        h4.asideH.hf.txt_center
+          img.kao(src='images/wp.jpg', width='20', height='20', alt='logo', style='margin-right:10px')
+          账户设置
+        ul.asideU
+          li
+            a.tab.hover(href='#glzl') 管理员资料
+          //li
+          //  a.tab(href='#addgly') 添加管理员
+          li
+            a.tab(href='#addyh') 添加用户
+      article#acc
+        section#glzl.youxin
+          h4.hf 管理员资料
+          .ct
+            #dn.xm
+              a.ra(href='javascript:;') 修改密码
+              p.xsd
+                span.tou 登入名
+                span#adName.xiang
+              .yc
+                form#xmim
+                  p
+                    label(for='dma') 当前密码
+                    input#dma(type='password', name='dma')
+                    label#dmaLog.errLog
+                  p
+                    label(for='xma') 新密码
+                    input#xma(type='password', name='xma')
+                    label#xmaLog.errLog
+                  p
+                    label(for='qxma') 确认新密码
+                    input#qxma(type='password', name='qxma')
+                    label#qxmaLog.errLog
+                  p.an.txt_center
+                    button(id="save",type='submit',style="margin-left:75%") 保存
+                    button.err(type='button') 关闭
+            #qx.xm
+              p.xsd
+                span.tou 管理权限
+                span#adminqx.xiang
+            #qx.xm
+              p.xsd
+                span.tou 管理权限
+                span#admintxqx.xiang
+        //section#addgly.youxin
+        //  h4.hf 添加管理员
+        //  .ct
+        //    form#addmanager
+        //        #addglnm.xm
+        //          .yc(style='display:block;border-top: 0px;')
+        //            p
+        //              label(for='xzh') 管理员账号名
+        //              input#xzh(type='text', name='xzh')
+        //              label(style="text-align:left;color:red;margin:1px;width:1px")*
+        //              label#adminIDLog.errLog
+        //        #addglpw1.xm
+        //          .yc(style='display:block;border-top: 0px;border:1px solid # ')
+        //            p
+        //              label(for='xzhmm1') 账户密码
+        //              input#xzhmm1(type='password', name='xzhmm1')
+        //              label(style="text-align:left;color:red;margin:1px;width:1px")*
+        //              label#adminPwLog.errLog
+        //        #addglpw2.xm
+        //          .yc(style='display:block;border-top: 0px;')
+        //            p
+        //              label(for='xzhmm2') 确认密码
+        //              input#xzhmm2(type='password', name='xzhmm2')
+        //              label(style="text-align:left;color:red;margin:1px;width:1px")*
+        //              label#ensureLog.errLog
+        //        #addglqx.xm
+        //          .yc(style='display:block;border-top: 0px;')
+        //            p#xzhqxContent
+        //            p
+        //              label(for='xzhqx' id='zhqxlb') 账户权限
+        //              span#xzhqxbm
+        //              label(style="text-align:left;color:red;margin:1px;width:1px")*
+        //
+        //        button#addglysend.ra(type='submit') 提交
+        section#addyh.youxin
+          h4.hf 添加用户
+              button#exceldap(type='button') 批量导入用户
+          .ct
+            form#adduser
+                #addnm.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='uname') 姓名
+                      input#uname(type='text', name='uname')
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+                      label#userIDLog.errLog
+                #addemail.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='umail') 邮箱
+                      input#umail(type='text', name='umail')
+                      label#adminEMLog.errLog
+                //#addpw1.xm
+                //  .yc(style='display:block;border-top: 0px;')
+                //    p
+                //      label(for='upw1') 密码
+                //      input#upw1(type='password', name='upw1')
+                //#addpw2.xm
+                //  .yc(style='display:block;border-top: 0px;')
+                //    p
+                //      label(for='upw2') 确认密码
+                //      input#upw2(type='password', name='upw2')
+                #addphone.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='uphone') 手机号码
+                      input#uphone(type='text', name='uphone')
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+                      label#uphoneLog.errLog
+                #addzhiw.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='uzhiw') 职位
+                      input#uzhiw(type='text', name='uzhiw')
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+
+                #addzhic.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='uzhic') 职称
+                      input#uzhic(type='text', name='uzhic')
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+
+                #addou.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='uldapou') 所属部门
+                      span#addbm
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+
+                button#addumes(type='submit') 提交
+    .upexcel
+        .tit
+          span.x X
+          h6#udetou 批量上传用户信息
+        form#upcel(name='upcel', target='sub', method='post', action='/f_upcel', enctype="multipart/form-data")
+          .bkq
+            p 仅支持Excel格式导入，请点击以下链接下载用户信息模板，按要求填写完成后进行上传！
+            p
+              a#downexcel(charset='utf-8',href='http://122.13.138.130:6083/download/excelmodel/海云安全手机使用登记表.xls')点击下载“海云安全手机使用登记表.xls”
+            p.nat
+                label(for='excels') 上传文件：
+                input#excels(type='text', name='excels')
+                input#excel(type='file', name='excel')
+            p.centerBtn
+                button(type='submit') 提交
+                button.err(type='button') 取消
+
+    script(type='text/javascript', src='script/tool.js')
+    script(type='text/javascript', src='script/login_ad.js')
+    script(type='text/javascript', src='script/strategy.js')
+    script(type='text/javascript', src='script/acc.js')
+    script(type='text/javascript', src='script/upexcel.js')
+    script(type='text/javascript', src='script/vinput.js')
+    iframe(name='sub', marginheight='0', width='0', height='0', frameborder='0', style='display:none;')

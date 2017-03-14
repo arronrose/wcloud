@@ -1,0 +1,246 @@
+@charset "UTF-8";
+/* CSS Document */
+body{		/*默认*/
+    font: 14px/1.5em "微软雅黑","HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+a:link,a:visited,a:hover,a:active{
+    text-decoration:none;
+    color:#326b97;
+}
+img{
+    vertical-align:middle;
+    margin-left: 10px;
+}
+ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+#wrap{
+    width: 100%;
+    min-height: 100%;
+    min-width:1024px;
+    max-width: 1920px;
+    margin:0 auto;
+    position:relative;
+    background: url(../images/loginbg.jpg) left top repeat-y ;
+    background-size: cover;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/loginbg.jpg', sizingMethod='scale');
+}
+header{
+    width:100%;
+    padding-top: 5px;
+    height:75px;
+    line-height:27px;
+    background:#3d7aa6;
+}
+#toplogo  img{
+    height: 60%;
+    width: 23%;
+    vertical-align: middle;
+    margin-left: 3%;
+    margin-top: 1%;
+}
+#toplogo  img{
+    height: 60%;
+    width: 23%;
+    vertical-align: middle;
+    margin-left: 3%;
+    margin-top: 1%;
+}
+nav#top{
+    float:right;
+    width: 73%;
+    margin-right: 1%;
+}
+nav#top ul{
+    margin-top: 2%;
+    float: right;
+}
+nav#second ul{
+    margin-top: 0px;
+}
+nav#top ul li{
+    float:left;
+}
+nav#top ul li a{
+    font-size:17px;
+    font-weight:normal;
+    color:#fff;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding:0 10px;
+    display: block;
+}
+nav#top ul li a:hover,nav#top ul li a.navHover{
+    border-radius: 15px;
+    background-color: #0a5aa9;
+    border-color:transparent;
+}
+
+
+/*整个页面设置*/
+#mainInfo{
+    margin:0 auto;
+    width:80%;
+    height:150%;
+    /*border:3px solid #2E324B;*/
+}
+/*页面标题设置*/
+.WordTitle{
+    font-size: 30px;
+}
+/*总的地图容器设置*/
+.chinaMap{
+    width:100%;
+    height:40.5%;
+    border:3px solid #2E324B;
+}
+    /*总的地图*/
+    #chinaMap{
+        float: left;
+        width:59%;
+        height:100%;
+        border-right:2.5px solid #2E324B;
+    }
+    /*右侧总的地图信息容器*/
+    #chinaMapInfo{
+        float: left;
+        width:40%;
+        height:100%;
+        /*border:2.5px solid #2E324B;*/
+    }
+        /*右侧总的地图信息统计*/
+        #chinaMapInfo #statistics{
+            width:102%;
+            height: 30%;
+            border-bottom:2.5px solid #2E324B;
+        }
+        #statistics p{
+            margin-left: 20px;
+        }
+        /*右侧总的地图详细信息展示*/
+        #chinaMapInfo #detailInfo{
+            width:102%;
+            height: 67%;
+            /*border:3px solid #2E324B;*/
+        }
+/*中间间隔*/
+#interval{
+    height: 12%;
+}
+
+/*分城市地图容器设置*/
+.mainMap{
+    width:100%;
+    height:40%;
+    border:3px solid #2E324B;
+}
+    /*分城市地图*/
+    #mainMap{
+        float: left;
+        width:59%;
+        height:100%;
+        border-right:2.5px solid #2E324B;
+    }
+    #mainMapInfo{
+        float: left;
+        width:40%;
+        height:100%;
+        /*border:2.5px solid #2E324B;*/
+    }
+        #mainMapInfo #selectCity{
+            width:102%;
+            height:20%;
+            border-bottom:1px solid #2E324B;
+        }
+        /*分城市地图信息统计，北京，青岛，广州*/
+        #mainMapInfo #detailMap{
+            width:102%;
+            height:59%;
+            border-bottom:1px solid #2E324B;
+        }
+        #detailMap p{
+            margin-left: 20px;
+        }
+        #mainMapInfo #legend{
+            width:102%;
+            height:20%;
+            /*border:1px solid #2E324B;*/
+        }
+
+/*china地图详细信息列表样式*/
+.main #shebei #shebeiH table{
+    border-bottom:none;
+}
+.main #shebei #shebeiH tr th{
+    border-bottom:none;
+    font-weight: bold;
+    background:#f7f7f7;
+    background:#c5c5c5;
+    padding: 0;
+}
+/*20150826为了显示更友好，删除a的hover效果*/
+#detailInfo #shebeiH tr a:hover{
+    border-bottom:none;
+    font-weight: bold;
+    cursor:pointer;
+    background: #8f84b8;
+    padding: 8px 4px 9px 4px;
+    margin: 0;
+}
+#detailInfo #shebeiH tr :hover{
+    border-bottom:none;
+    font-weight: bold;
+    cursor:pointer;
+    /*background: #8f84b8;*/
+    /*padding: 8px 4px 9px 4px;*/
+    margin: 0;
+}
+/*home表头*/
+#detailInfo #shebeiH .col_1{
+    width:20%;
+}
+#detailInfo #shebeiH .col_2{
+    width:30%;
+}
+#detailInfo #shebeiH .col_3{
+    width:40%;
+}
+.jscroll{
+    overflow: hidden !important;
+}
+.jscrollContainer{
+    background: url(../images/tbg.jpg) left top repeat;
+}
+#shebeiB .jscrollContainer{
+    /*min-height: 420px;*/
+    height:89%;
+    width: 100%;
+    overflow: auto;
+    /*padding-bottom: 10%;*/
+}
+.altTr .alt{
+    background-color:#f1f1f1;
+}
+.altTr tr:hover{
+    background-color: #b5cddd;
+}
+.altTr tr.activ{
+    background-color:#3d7aa6;
+}
+.xuhao{
+    width: 20%;
+    padding: 5px 0 5px 0;
+    text-align: center;
+}
+.uid{
+    width:30%;
+    padding: 5px 0 5px 0;
+    text-align: center;
+}
+.mac{
+    width: 40%;
+    padding: 5px 0 5px 0;
+    text-align: center;
+}

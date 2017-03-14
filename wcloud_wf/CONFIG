@@ -1,0 +1,20 @@
+config:
+ 1. pre install:
+    yum install gcc gcc-c++ pcre-devel zlib-devel make python-setuptools python-devel readline-devel openssl-devel 
+
+ 2. config /etc/hosts
+    <WorkPhone WS IP> wphone.ws.xthinkers
+
+ 3. install nodejs
+    wget http://nodejs.org/dist/v0.10.20/node-v0.10.20.tar.gz
+    tar -xzf node-v0.10.20.tar.gz
+    cd node-v0.10.20
+    ./configure
+    make
+    make install
+
+ 4. install pm2
+    npm install git://github.com/Unitech/pm2.git -g
+    pm2 start centos
+
+    

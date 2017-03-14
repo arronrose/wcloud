@@ -1,0 +1,109 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='workphone.')
+    meta(name='keywords', content='workphone')
+    title 海云安全手机-审计员
+    link(rel='shortcut icon', href='images/logo.png')
+    link(rel='stylesheet', type='text/css', href='jquery-ui-1.8.23.custom/css/ui-lightness/jquery-ui-1.8.23.custom.css')
+    link(type='text/css', rel='stylesheet', href='style/reset.css')
+    link(type='text/css', rel='stylesheet', href='jqueryCustom/jquery.mCustomScrollbar.css')
+    link(type='text/css', rel='stylesheet', href='style/admin_master.css')
+    link(type='text/css', rel='stylesheet', href='style/vinput.css')
+    script(type='text/javascript', src='script/modernizr+2.0.3.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-ui-1.8.23.custom.min.js')
+    script(type='text/javascript', src='script/setCookie.js')
+    script(type='text/javascript', src='jqueryCustom/jquery.mCustomScrollbar.concat.min.js')
+  body
+    #wrap
+      header
+        // 头部
+        a#toplogo
+          img(src='images/logo_ad.png', alt='', height='45')
+        nav#top
+          ul
+            // 头部的连接
+            li
+              a(href='/f_org_auditor') 审计员账户
+            li
+              a.navHover(href='/f_org_auditor_list') 审计员管理
+            li
+              a(href='/f_org_auditlog') 日志审计
+            li
+              a#logout(href='#') 退出
+      aside#auditorlist
+        // 边栏
+        // workphone logo
+        ul#au_guanli.jscroll
+          li.firstLi
+            img.kao(src='images/home.png', width='20', height='20', alt='logo', style='position:absolute;top:3px;left:0;')
+            div.jscroll
+            // 管理员
+            ul#au_yic
+              // 小部门
+      article#auditor
+        // 右面的主体内容容器
+        section#main.main
+          // 主题内容 设备数据现实
+          #gnan
+            // 功能按钮区disabled="disabled"
+            button#au_xzqb(type='button') 选择全部
+            button#au_kcxz(type='button') 空出选择
+            button#au_delusers(type='button') 删除审计员
+            a#popd.cb(href="#")
+            input#au_guolv(type='text', placeholder='按字段搜索...')
+
+          #au_shebei
+            #au_shebeiH
+              table#au_ygt
+                // 这里是设备列表的头部
+                colgroup
+                  col.col_1
+                  col.col_2
+                  col.col_3
+                  col.col_4
+                  col.col_5
+                  col.col_6
+
+                tr
+                  th
+                  th
+                    a(id='thstatus',class='0',onclick='au_sortable(1,this.id)') 序号
+                  th
+                    a(id='thname',class='0',onclick='au_sortable(2,this.id)') 用户名
+                  th
+                    a(id='themail',class='0',onclick='au_sortable(3,this.id)') 电子邮件
+                  th
+                    a(id='thtelephone',class='0',onclick='au_sortable(4,this.id)') 电话号码
+                  th
+                    a(id='thjob',class='0',onclick='au_sortable(5,this.id)') 权限
+
+            #au_shebeiB.jscroll
+              // jscroll
+              .jscrollContainer
+                table#au_yglb.altTr
+                  // 设备列表的主体内容
+                  colgroup
+                    col.col_1
+                    col.col_2
+                    col.col_3
+                    col.col_4
+                    col.col_5
+                    col.col_6
+
+                  tbody
+    #popceng
+      #au_delete.dialog(title='审计员删除')
+        form#au_lsscyh
+          p 此操作会将用户有关的所有信息都清除，是否要继续？
+            p.centerBtn.Lp.xl
+              button#au_sScyh.Lbtn(type='submit') 是
+              button#au_bScyh.Lbtn(type='button') 否
+
+    script(type='text/javascript', src='script/login_ad.js')
+    script(type='text/javascript', src='script/master.js')
+    script(type='text/javascript', src='script/vinput.js')
+    script(type='text/javascript', src='script/main.js')
+    script(type='text/javascript', src="script/Code.js")

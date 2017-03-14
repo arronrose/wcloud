@@ -1,0 +1,249 @@
+article.unpad{
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+#setLDAP h1{
+    font-size: 16px;
+    color: #000;
+    padding: 1.2em 0;
+}
+#setLDAP h4{
+    font-size: 14px;
+    color: #000;
+    padding: .8em 0;
+    background: url(../images/topsan.png) 155px bottom no-repeat;
+    margin-bottom: -1px;
+    zoom:1;
+}
+#setLDAP h1,#setLDAP .f{
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #999;
+    padding-left: 15px;
+}
+#setLDAP .bk{
+    padding: 16px 0 14px 40px;
+    border-bottom: 1px solid #999; 
+}
+#setLDAP .bk p{
+    padding: .3em 0;
+    overflow: hidden;
+    zoom: 1;
+}
+#setLDAP .bk label{
+   display: inline-block;
+}
+* html #setLDAP .bk label{
+    display: inline;
+}
+#setLDAP .bk label,#setLDAP .bk input{
+    width: 260px;
+}
+#setLDAP .bk input:focus{
+    border-color: #5bc0de;
+    outline: none;
+}
+.error{
+    border-color:#d9534f !important;
+}
+.bk .btn{
+    margin: 10px 0  10px 120px;
+}
+#shouquan{
+    padding: 15px 0 15px 40px;
+    border-bottom: 1px solid #999;
+    position: relative;
+    zoom: 1;
+}
+#sq{
+    padding: 0 4em;
+    font-size: 16px;
+    line-height: 36px;
+}
+.zd{
+    margin-left: 40px;
+}
+.tbu{
+    padding: 18px 0 13% 0;
+}
+.fl{
+    float: left;
+}
+#iterval ul{
+    display: none;
+    border: 1px solid #999;
+    border-top: none;
+}
+#iterval ul a{
+    display: block;
+    padding: 3px 0 3px 1em;
+    width: 150px;
+    background: #fff;
+    color: #000;
+}
+#iterval ul a:hover{
+    background: #f0f0f0;
+}
+#iterval p{
+    border: 1px solid #999;
+    padding: 3px 30px 3px 1em;
+    height: 18px;
+    line-height: 18px;
+    width: 120px;
+    background: url(../images/ts.png) 97% center no-repeat;
+    cursor: pointer;
+}
+#setA{
+    width: 430px;
+    overflow: hidden;
+    zoom: 1;
+    position: absolute;
+    top:15px;
+    left: 350px;
+    -ms-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    -o-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 9999;
+}
+.tit{
+    overflow: hidden;
+    zoom: 1;
+    font-size: 16px;
+    text-align: left;
+    padding: 9px 15px;
+    color: #fff;
+    background: #4f97c7;
+}
+.tit .x{
+    float: right;
+    color: #fff;
+    cursor: pointer;
+}
+.tit .x:hover{
+    color: #f1f1f1;
+}
+.by{
+    padding: 18px 15px;
+    background-color: #fff;
+}
+.flet{
+    float: left;
+}
+.frit{
+    margin-left: 74px;
+}
+.tb{
+    border: 1px solid #999;
+}
+.tb p{
+    background: #c5c5c5;
+    text-indent: 69px;
+    padding: 4px 0;
+}
+.tb .jscroll{
+    height: 175px;
+}
+.tb .jscrollContainer{
+    min-height: 175px;
+    background: url(../images/smalltbg.jpg) left top repeat;
+}
+.tb #pz tr{
+    height: 26px;
+    line-height: 26px;
+    padding: 0;
+}
+.tb #pz td{
+    padding: 0;
+}
+.tb .col1{
+    width: 28px;
+}
+.tb td{
+    text-align: center;
+}
+.tb .tc{
+    text-align: left;
+    text-indent: 32px;
+}
+.by .btn{
+    margin-top: 20px;
+    padding-left: 2em;
+}
+.flrt{
+    float: right;
+}
+#manu{
+    margin-top: 1.1em;
+    margin-right: 1em;
+}
+/***************/
+.cppUp{
+    width: 380px;
+    -ms-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    -o-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    display: none;
+}
+.bkq{
+    padding: 20px;
+    background-color: #fff;
+}
+.bkq p{
+    margin-bottom: .4em;
+}
+.bkq p label{
+    width: 80px;
+    display: inline-block;
+    text-align: left;
+}
+* html .bkq p label{
+    display: inline;
+}
+.bkq p textarea{
+    vertical-align: top;
+    width: 240px;
+    height: 5em;
+}
+.bkq .centerBtn{
+    text-align: center;
+    margin-top: .7em;
+}
+#apll{
+    display: none;
+}
+.wb{
+    display: none;
+}
+#abb{
+    display: none;
+}
+
+/******上传excel*****/
+.upexcel{
+    width: 380px;
+    -ms-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    -o-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    display: none;
+}
+
+#excel{
+    display: none;
+}
+#exceldap{
+    float: right;
+    margin-right: 4%;
+}

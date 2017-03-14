@@ -1,0 +1,139 @@
+!!! 5
+html
+    head
+        meta(charset='utf-8')
+        meta(name='description', content='workphone.')
+        meta(name='keywords', content='workphone')
+        title 海云安全手机
+        link(rel='shortcut icon', href='images/logo.png')
+        link(rel='stylesheet', type='text/css', href='jquery-ui-1.8.23.custom/css/ui-lightness/jquery-ui-1.8.23.custom.css')
+        link(type='text/css', rel='stylesheet', href='style/reset.css')
+        link(type='text/css', rel='stylesheet', href='jqueryCustom/jquery.mCustomScrollbar.css')
+        link(type='text/css', rel='stylesheet', href='style/admin.css')
+        link(type='text/css', rel='stylesheet', href='style/vinput.css')
+        script(type='text/javascript', src='script/modernizr+2.0.3.js')
+        script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+        script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-ui-1.8.23.custom.min.js')
+        script(type='text/javascript', src='script/setCookie.js')
+        script(type='text/javascript', src='jqueryCustom/jquery.mCustomScrollbar.concat.min.js')
+        script(type='text/javascript', src='http://api.map.baidu.com/api?v=2.0&ak=2bfMMwcMpQQeS4ci3BB9AmUl')
+        script(type="text/javascript" src="http://api.map.baidu.com/library/CurveLine/1.5/src/CurveLine.min.js")
+    body
+        #wrap
+            header
+                // 头部
+                a#toplogo
+                    img(src='images/logo_ad.png', alt='', height='45')
+                nav#top
+                    ul
+                        // 头部的连接
+                        li
+                            a(href='/f_org_acc') 账户
+                        li
+                            a(href='/f_org_home') 设备管理
+                        li
+                            a(href='/f_org_strategy') 策略配置
+                        li
+                            a(href='/f_org_contacts') 同步联系人
+                        li
+                            a(href='/f_org_mapp') 应用管理
+                        li
+                            a(href='/f_org_log') 查看日志
+                        li
+                            a(href='/f_org_statistics') 数据统计
+                        li
+                            a#logout(href='#') 退出
+            #trace_main
+                #trace_h
+                    a#select_user_a.cb(href='#')
+                    #zz
+                        button#trace_user(type='button') 选择待追踪用户
+                    #xx
+                       span 用户名：
+                       span.tou#tr_user
+                       span 电话号码：
+                       span.tou#tr_pnumber
+                       span 手机型号：
+                       span.tou#tr_devtype
+                    #hfj
+                    //分界线
+
+                #trace_c
+                    #trace_cl
+                        #trace_desc
+                            span 起始时间：
+                            input#tr_starttime(type='text',name='tr_start_time',onfocus='setDayHM(this)')
+                            span 截止时间：
+                            input#tr_endtime(type='text',name='tr_end_time',onfocus='setDayHM(this)')
+                            button#tr_search 搜索
+                        #trace_list
+                            #trace_list_h
+                                table#tult
+                                    colgroup
+                                        col.col_6_1
+                                        col.col_6_2
+                                        col.col_6_3
+                                        col.col_6_4
+                                        col.col_6_5
+                                        col.col_6_6
+                                    tr
+                                        th(rowspan=2)
+                                            span(id="tr_selectall",class="checkbox checkbox_uncheck",onclick='tr_selectAll(this.id)')
+                                        th(rowspan=2) 序号
+                                        th(rowspan=2) 记录时间
+                                        th(rowspan=2) 设备状态
+                                        th(colspan=2) 位置信息
+                                    tr
+                                        th 经度
+                                        th 纬度
+                            #trace_list_b.jscroll
+                                .jscrollContainer
+                                    table#tulb.altTr
+                                        colgroup
+                                            col.col_6_1
+                                            col.col_6_2
+                                            col.col_6_3
+                                            col.col_6_4
+                                            col.col_6_5
+                                            col.col_6_6
+                                        tbody
+                    #trace_cr
+                        #dtdis
+                            p
+                                span  设备轨迹显示
+                                span#dtdis_tip (※地图中的绿点为设备在查询期间活动的地理位置）
+                        #tracemap
+                        //地图容器
+
+        #popceng
+            #selectuser_div.dialog(title='选择需要查询轨迹的用户')
+                form#selectuser
+                    #trace_search_div
+                        input#trace_search_content(width='25',placeholder='请输入查询关键字')
+                        button#trace_search_Btn(type='button',name='trace_search_Btn') 搜索
+                    p
+                        span 用户列表
+                    #trace_tree
+                        #trace_tree_users
+
+                    #trace_yanzh_div
+                        span 用户名：
+                        input#search_user
+                        span 登录密码：
+                        input#search_pwd(type='password')
+                    p.centerBtn.Lp
+                        button#traceSub.Lbtn(type='button', name='urlSub') 确定
+                        button#traceExit.Lbtn(type='button', name='urlExit') 取消
+
+
+
+
+
+        script(type='text/javascript', src='script/login_ad.js')
+        script(type='text/javascript', src='script/strategy.js')
+        script(type='text/javascript', src='script/vinput.js')
+        script(type='text/javascript', src='script/Bmap.js')
+        script(type='text/javascript', src='script/main.js')
+        script(type='text/javascript', src='script/trace.js')
+
+

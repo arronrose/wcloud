@@ -1,0 +1,114 @@
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='Wifi-data')
+    meta(name='keywords',content='Wifi-data')
+    title Wi-Fi数据
+    link(rel='stylesheet', type='text/css', href='jquery-ui-1.8.23.custom/css/ui-lightness/jquery-ui-1.8.23.custom.css')
+    link(type='text/css', rel='stylesheet', href='style/wifi.css')
+    script(type='text/javascript', src='script/login_ad.js')
+    script(type='text/javascript', src='script/main.js')
+    script(type='text/javascript', src='script/tool.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-ui-1.8.23.custom.min.js')
+    script(type='text/javascript', src='script/echarts.js')
+    script(type='text/javascript', src='http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js')
+    //script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
+    //script(type='text/javascript', src='script/jquery.bxslider.min.js')
+    //script(type='text/javascript', src='script/jquery.bxslider.css')
+  body
+    //(onContextMenu="return false")
+    #wrap
+      header
+        // 头部
+        a#toplogo
+          img(src='images/logo_ad.png', alt='', height='45')
+        nav#top
+          ul
+            // 头部的连接
+            li
+              a(href='/f_org_acc') 账户
+            li
+              a(href='/f_org_control') 多维管控
+            li
+              a(href='/f_org_home') 设备管理
+            li
+              a(href='/f_org_strategy') 策略配置
+            li
+              a(href='/f_org_contacts') 同步联系人
+            li
+              a(href='/f_org_mapp') 应用管理
+            li
+              a(href='/f_org_log') 查看日志
+            li
+              a(href='/f_org_statistics') 数据统计
+            li
+              a.navHover(href='/f_org_wifi') WiFi
+            li
+              a(href='/f_org_safemarket') 安全市场
+            li
+              a#logout(href='#') 退出
+      div#mainInfo
+        div.WordTitle
+          p
+            b 全国Wi-Fi分布情况
+        div.chinaMap
+          div#chinaMap
+          div#chinaMapInfo
+            div#statistics
+              p 已捕获Wi-Fi热点个数：
+                label#wholeAll
+              p 已检测到危险公共Wi-Fi热点个数：
+                lable#wholePubDan
+              p 已检测到安全公共Wi-Fi热点个数：
+                lable#wholePubSafe
+            div#detailInfo
+              #shebeiH
+                table#ygt
+                  colgroup
+                    col.col_1
+                    col.col_2
+                    col.col_3
+                  tr
+                    th(id="xuhao") 序号
+                    th(id='uid') 危险WiFi名称
+                    th(id='mac') MAC地址
+              #shebeiB.jscroll
+                .jscrollContainer
+                  table#yglb.altTr
+                    colgroup
+                      col.col_1
+                      col.col_2
+                      col.col_3
+                    tbody
+        div#interval
+        div.mainMap
+          div#mainMap
+          div#mainMapInfo
+            div#selectCity
+              p(style="margin-left:20px") 请选择城市
+              //select#selectcity(style="margin-left:20px")
+              select#choosecity(style="margin-left:20px")
+                option(value="beijing") 北京市
+                option(value="qingdao") 青岛市
+                option(value="guangzhou") 广州市
+            div#detailMap
+               br
+               p 已捕获Wi-Fi热点个数：
+                 lable#detailMapAll
+               br
+               p 已检测到危险公共Wi-Fi热点个数：
+                 lable#detailMapPubDan
+               br
+               p 已检测到安全公共Wi-Fi热点个数：
+                 lable#detailMapPubSafe
+            div#legend
+              img(src='images/safe.png' style="float:left;")
+              p(style="float:left") 安全WiFi
+              img(src='images/unknown.png' style="float:left;")
+              p(style="float:left") 未知WiFi
+              img(src='images/danger.png' style="float:left;")
+              p(style="float:left") 危险WiFi
+    script(type='text/javascript', src='http://api.map.baidu.com/api?key=&v=1.1&services=80ca255d6d2f3660b9dc9ecba59010b0')
+    script(type='text/javascript', src='script/wifi.js')
+    //script(type='text/javascript', src='script/Bmap.js')

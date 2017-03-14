@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  script(type='text/javascript', src='script/les.js')
+  .container
+    h1 个人登陆
+    form#login(method='post', name='login', action='', onsubmit="return false;")
+      .top
+        a#wo(href='/f_org_login') 企业版
+        a#peo(href='/f_per_login') 个人版
+      p#pnm
+        input#Email(type='text', name='Email', placeholder='用户名', autocomplete='off')
+      p#tgmp
+        input#pwd(type='password', name='pwd', placeholder='密码' autocomplete='off')
+        span#errTishi
+      p#yanzheng.nw
+        input#vert(type='text' maxlength='4')
+        img#yanz(src='' alt='' width='112' height='38')
+        a#huan(href='javascript:;') 换一张
+      p#option
+        a#definPwd.yellow.lesAlt(href='javascript:') 忘记密码
+        //input#savePerson(type='checkbox', name='savePerson')
+        span#saveUid.checkbox.checkbox_uncheck
+        label(for='savePerson') 记住账号
+      p#anniu
+          button#loginBtn(type='submit') 确定
+          input#zhmm(type='button', value='确定', name='zhmm')
+  div.overLay
+  div.lesCont
+    p.lesNote 请联系管理员，发送邮件至jingpengfei@iie.ac.cn
+    p.center
+      button.lesClose 确定
+  script(type='text/javascript', src='script/vinput.js')
+  script(type='text/javascript', src='script/global.js')

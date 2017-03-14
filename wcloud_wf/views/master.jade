@@ -1,0 +1,183 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='workphone.')
+    meta(name='keywords', content='workphone')
+    title 海云安全手机-管理员
+    link(rel='shortcut icon', href='images/logo.png')
+    link(type='text/css', rel='stylesheet', href='style/reset.css')
+    link(type='text/css', rel='stylesheet', href='jqueryCustom/jquery.mCustomScrollbar.css')
+    link(type='text/css', rel='stylesheet', href='style/admin_master.css')
+    link(type='text/css', rel='stylesheet', href='style/vinput.css')
+    script(type='text/javascript', src='script/modernizr+2.0.3.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='script/setCookie.js')
+    script(type='text/javascript', src='jqueryCustom/jquery.mCustomScrollbar.concat.min.js')
+    script(type='text/javascript', src='script/main.js')
+  body
+    #wrap
+      header
+        // 头部
+        a#toplogo
+          img(src='images/logo_ad.png', alt='', height='45')
+        nav#top
+          ul
+            // 头部的连接
+            li
+              a.navHover(href='/f_org_master') 管理员账户
+            li
+              a(href='/f_org_master_list') 管理员列表
+            li
+              a(href='/f_org_admin_list') 操作员列表
+            li
+              a(href='/f_org_setLDAP') LDAP配置
+            li
+              a#logout(href='#') 退出
+      aside
+        // 边栏
+        h4.asideH.hf.txt_center
+          img.kao(src='images/wp.jpg', width='20', height='20', alt='logo', style='margin-right:10px')
+          管理员
+        ul.asideU
+          li
+            a.tab.hover(href='#glzl') 管理员资料
+          li
+            a.tab(href='#addgly') 添加管理员
+          li
+            a.tab(href='#addczy') 添加操作员
+      article#ma_acc
+        section#glzl.youxin
+          h4.hf 管理员资料
+          .ct
+            #dn.xm
+              a.ra(href='javascript:;') 修改密码
+              p.xsd
+                span.tou 登入名
+                span#masterName.xiang
+              .yc
+                form#mastermim
+                  p
+                    label(for='masterdma') 当前密码
+                    input#masterdma(type='password', name='masterdma')
+                  p
+                    label(for='masterxma') 新密码
+                    input#masterxma(type='password', name='masterxma')
+                  p
+                    label(for='masterqxma') 确认新密码
+                    input#masterqxma(type='password', name='masterqxma')
+                  p.an.txt_center
+                    button(type='submit') 保存
+                    button.err(type='button') 关闭
+            #qx.xm
+              p.xsd
+                span.tou 权限
+                span#masterqx.xiang
+
+        section#addgly.youxin
+          h4.hf 添加管理员
+          .ct
+            form#addmanager
+                #addglnm.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='xzh') 账户名
+                      input#xzh(type='text', name='xzh')
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+                      label#adminIDLog.errLog
+                #addglpw1.xm
+                  .yc(style='display:block;border-top: 0px;border:1px solid # ')
+                    p
+                      label(for='xzhmm1') 账户密码
+                      input#xzhmm1(type='password', name='xzhmm1')
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+                      label#adminPwLog.errLog
+                #addglpw2.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='xzhmm2') 确认密码
+                      input#xzhmm2(type='password', name='xzhmm2')
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+                      label#ensureLog.errLog
+                #addemail.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='xzhmail') 邮箱
+                      input#xzhmail(type='text', name='xzhmail')
+                      label#adminEMLog.errLog
+                #addphone.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='xzhphone') 手机号码
+                      input#xzhphone(type='text', name='xzhphone')
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+                      label#uphoneLog.errLog
+                #addglqx.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='xzhqx') 账户权限
+                      select#xzhqx(type='text', name='xzhqx')
+                        option(value='请选择') 请选择
+                        option(value='ptgly') 普通管理员
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+                button#addglysend.ra(type='submit') 提交
+        section#addczy.youxin
+          h4.hf 添加操作员
+          .ct
+            form#addadmin
+                #addcznm.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='adname') 账户名
+                      input#adname(type='text', name='adname')
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+                      label#adIDLog.errLog
+                #addczpw1.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='adpw1') 账户密码
+                      input#adpw1(type='password', name='adpw1')
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+                      label#adPwLog.errLog
+                #addczpw2.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='adpw2') 确认密码
+                      input#adpw2(type='password', name='adpw2')
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+                      label#adLog.errLog
+                #addczemail.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='admail') 邮箱
+                      input#admail(type='text', name='admail')
+                      label#adEMLog.errLog
+                #addczphone.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='adphone') 手机号码
+                      input#adphone(type='text', name='adphone')
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+                      label#aduphoneLog.errLog
+                #addczou.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='adldapou') 管理权限
+                      span#gxfw
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+                #addtxqx.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='xzhqx' id='zhqxlb') 通信权限
+                      span#txqxbm
+                      button#addtxqxBtn 添加
+                      label(style="text-align:left;color:red;margin:1px;width:1px")*
+                    p#txqxContent
+                button#addadminsend(type='submit') 提交
+
+    script(type='text/javascript', src='script/tool.js')
+    script(type='text/javascript', src='script/login_ad.js')
+    script(type='text/javascript', src='script/acc.js')
+    script(type='text/javascript', src='script/master.js')
+    script(type='text/javascript', src='script/vinput.js')
+    iframe(name='sub', marginheight='0', width='0', height='0', frameborder='0', style='display:none;')

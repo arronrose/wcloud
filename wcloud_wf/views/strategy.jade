@@ -1,0 +1,237 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='workphone.')
+    meta(name='keywords', content='workphone')
+    title 海云安全手机
+    link(rel='shortcut icon', href='images/logo.png')
+    link(rel='stylesheet', type='text/css', href='jquery-ui-1.8.23.custom/css/ui-lightness/jquery-ui-1.8.23.custom.css')
+    link(type='text/css', rel='stylesheet', href='style/reset.css')
+    link(type='text/css', rel='stylesheet', href='jqueryCustom/jquery.mCustomScrollbar.css')
+    link(type='text/css', rel='stylesheet', href='style/admin.css')
+    link(type='text/css', rel='stylesheet', href='style/vinput.css')
+    link(type='text/css', rel='stylesheet', href='style/jquery.autocomplete.css')
+    script(type='text/javascript', src='script/modernizr+2.0.3.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-ui-1.8.23.custom.min.js')
+    script(type='text/javascript', src='script/setCookie.js')
+    script(type='text/javascript', src='jqueryCustom/jquery.mCustomScrollbar.concat.min.js')
+    script(type='text/javascript', src='script/jquery.autocomplete.js')
+  body
+    #wrap
+      header
+        // 头部
+        a#toplogo
+          img(src='images/logo_ad.png', alt='', height='45')
+        nav#top
+          ul
+            // 头部的连接
+            li
+              a(href='/f_org_acc') 账户
+            li
+              a(href='/f_org_home') 设备管理
+            li
+              a.navHover(href='/f_org_strategy') 策略配置
+            li
+              a(href='/f_org_contacts') 同步联系人
+            li
+              a(href='/f_org_mapp') 应用管理
+            li
+              a(href='/f_org_log') 查看日志
+            li
+              a(href='/f_org_statistics') 数据统计
+            li
+              a#logout(href='#') 退出
+      div#strategy_man
+        // 右面的主体内容容器
+        #strategy_g
+           // 功能按钮区disabled="disabled"
+           button#stxzqb(type='button') 选择全部
+           button#stkcxz(type='button') 取消选择
+           button#stnew(type='button') 配置新策略
+           button#stfix(type='button') 修改当前策略
+           a#strpopd.cb(href="#")
+           button#stdel(type='button') 删除策略
+           button#stsms(type='button') 短信下发策略
+           button#smsdel(type='button') 短信删除策略
+
+        #strategy_c
+          #strategyH
+            table#srH
+              // 这里是设备列表的头部
+              colgroup
+                col.col_1
+                col.col_2
+                col.col_3
+                col.col_4
+                col.col_5
+                col.col_6
+                col.col_7
+                col.col_8
+                col.col_9
+
+              tr
+                th(rowspan=2)
+                th(rowspan=2) 序号
+                th(rowspan=2) 策略发布者
+                th(rowspan=2) 策略开始时间
+                th(rowspan=2) 策略结束时间
+                th(rowspan=2) 策略作用范围
+                th(rowspan=2) 策略内容
+                th(rowspan=2) 策略作用人群
+                th(rowspan=2) 策略修改
+                th(rowspan=2) 策略删除
+
+          #strategyB.jscroll
+            .jscrollContainer
+              table#stB.altTr
+                // 设备列表的主体内容
+                colgroup
+                  col.col_1
+                  col.col_2
+                  col.col_3
+                  col.col_4
+                  col.col_5
+                  col.col_6
+                  col.col_7
+                  col.col_8
+                  col.col_9
+                  col.col_10
+                tbody
+
+
+    div#strategy_con(style='display:none')
+      #strategy_L
+        ul#guanli
+          #search_container_adm
+            input#searchadm.search(type='text',name='searchadm',width='30', height='20',placeholder='请输入姓名关键字')
+            button#searchadmBtn(onclick="search_adm()") 查询
+          li.firstLi
+            div
+            // 管理员
+            ul#yic
+              // 小部门
+      #strategy_N
+        h2 策略作用时间
+        p
+          label 策略开始时间：
+          span
+            input#start_time(type='text',name='start_time',onfocus='setDayHM(this)')
+          label 策略结束时间：
+          span
+            input#end_time(type='text',name='end_time',onfocus='setDayHM(this)')
+        h2 策略作用区域
+        p
+          label 策略描述：
+          span
+            input#desc(type='text',name='desc',value = '')
+            a#fast_stra(onclick='showprestrategy()' style='cursor:pointer;text-decoration:underline;margin-left:3%') 预置策略
+          span
+            select#stra_fast_choice(onchange='loadprestrategy(this)' style='display:none' name='hide')
+                option(selected='selected') 请选择预置策略
+            a#delPreStra(style='cursor:pointer;color:red;font-size:3%;display:none;margin-left:3%;text-decoration:underline') 删除本条预置策略
+            a#addPreStra(style='cursor:pointer;color:red;font-size:3%;display:none;margin-left:3%;text-decoration:underline') 新增本条预置策略
+        p
+          label 中心坐标     经度：
+          span
+            input#location_j(type='text',name='location_j',value = '',onfocus='showMap("map")')
+          label  纬度：
+          span
+            input#location_w(type='text',name='location_w',value = '',onfocus='showMap("map")')
+        p
+          label 策略作用基站：
+          span
+            select#baseStationID(type='text', name='baseStationID')
+                option(value='请选择基站') 请选择基站
+          label 作用半径：
+          span
+            input#radius(type='text',name='radius',value = '')
+            （米）
+
+        h2 策略内容
+          &nbsp&nbsp&nbsp&nbsp
+          a#forceControlText.forceControlText (
+          span(id="forceControl",class="checkbox checkbox_uncheck",onclick="forceControlChange()")
+          a.forceControlText 强制管控  )
+        p(id="defaultControlContainer")
+          label(id="defaultControl") **********摄像头及录音功能默认禁用!!**********
+        p
+          label usb连接管控：
+          span
+            select#usb_connect(name='usb_connect')
+              option(value='ucfjy')非禁用
+              option(value='ucjy')禁用
+          label usb调试管控：
+          span
+            select#usb_debug(name='usb_debug')
+              option(value='udfjy')非禁用
+              option(value='udjy')禁用
+        p
+          label 录音管控：
+          span
+            select#tape(name='tape',disabled=true)
+              //option(value='tfjy')非禁用
+              option(value='tjy')禁用
+          label 摄像头管控：
+          span
+
+            select#camera(name='camera',disabled=true)
+              option(value='cjy')禁用
+
+        p
+          label wifi/蓝牙管控：
+          span
+            select#wifi(name='wifi')
+              option(value='wfjy')非禁用
+              option(value='wjy')禁用
+          label 移动数据管控：
+          span
+            //onchange="judge_wifi_data(this)"
+            select#mobiledata(name='mobiledata')
+              option(value='mfjy')非禁用
+              option(value='mjy')禁用
+        p
+          label gps管控：
+          span
+            select#gps(name='gps')
+              option(value='gfjy')非禁用
+              option(value='gjy')禁用
+
+        p#buttonLine
+          button#celveBn 策略下发
+          button#exitBn 取消
+      div#map.map(style='display:none')
+        #maptitle
+          span 作用地点：
+            input#map_loc(type='text',name='map_loc',value = '')
+            u
+              a(href="javascript:void(0);" ,onclick="showMap('map')") 搜索
+          span 作用半径：
+            input#map_r(type='text',name='map_r',value = '')
+            （米）
+            u
+              a(href="javascript:void(0);" ,onclick="showMap('map')") 设置
+          a#map_close(href="javascript:void(0);" ,onclick="hide('map')") 关闭
+        #mapbody
+    #popceng
+      #shanchu.dialog(title='删除策略')
+        form#delStr
+          p 这将删除你所选的策略，你确定要继续操作？
+          p.centerBtn.Lp
+             button#sDel.Lbtn(type='submit') 是
+             button#bDel.Lbtn(type='button') 否
+      #smsshanchu.dialog(title='删除策略')
+        form#smsdelStr
+          p 这将通过短信删除你所选的策略，是否要继续操作？
+          p.centerBtn.Lp
+             button#sDelsms.Lbtn(type='submit') 是
+             button#bDelsms.Lbtn(type='button') 否
+
+
+    script(type='text/javascript', src='script/login_ad.js')
+    script(type='text/javascript', src='script/vinput.js')
+    script(type='text/javascript', src='script/main.js')
+    script(type='text/javascript', src='script/strategy.js')
+    script(type='text/javascript', src='script/Code.js')
+    script(type='text/javascript', src='http://api.map.baidu.com/api?v=2.0&ak=2bfMMwcMpQQeS4ci3BB9AmUl')

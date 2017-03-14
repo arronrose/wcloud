@@ -1,0 +1,234 @@
+body{
+	font: 100%/1.2 "微软雅黑","HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/*background: url(../images/login_bg.jpg) left top no-repeat;*/
+	background-size: cover;
+	/*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/login_bg.jpg', sizingMethod='scale');	这里的路径是相对于html文档的，而不是相对于css文档*/
+	font-weight: lighter;
+}
+
+#downloadhb{
+    position:relative;
+    top:-30px;
+    left:-15px;
+    float: right;
+}
+
+.container{
+	margin: 50px auto 10px auto;
+	width: 465px;
+}
+.container h1{
+	padding: 95px 0 1.2em 0;
+	font-size: 32px;
+	text-align: center;
+	color:#404041;
+	background: url(../images/logo_ad1.png) top center no-repeat;
+}
+.container #login{
+	padding: 85px 60px 60px;
+	/*background: url(../images/fangkuai.png) left top repeat;*/
+	background: #fff;
+	border: 1px solid #a8b4ca;
+	-moz-border-radius:8px;
+	-o-border-radius:8px;
+	-webkit-border-radius:8px;
+	-ms-border-radius:8px;
+	border-radius: 8px;
+	/*-moz-box-shadow: 0 2px 4px rgba(0,0,5,.3);*/
+	/*-o-box-shadow: 0 2px 4px rgba(0,0,5,.3);*/
+	/*-ms-box-shadow: 0 2px 4px rgba(0,0,5,.3);*/
+	/*-webkit-box-shadow: 0 2px 4px rgba(0,0,5,.3);*/
+	/*box-shadow: 0 2px 4px rgba(0,0,5,.3);*/
+	position: relative;
+}
+#login #cname,#login #uid,#login #password{
+	padding: 10px 2px 10px 15px;
+	border: 1px solid #5d6063;
+	font-size: 115%;
+	line-height: 1.2em;
+	height: 1.2em;
+	color: #474747;
+	margin: 0;
+}
+#login #cname{
+	padding-right: 45px;
+	background:#fff url(../images/slideDown.png) 97% center no-repeat;
+	cursor: pointer;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	overflow: hidden;
+}
+#login #uid{
+	padding-left: 40px;
+	background:#fff url(../images/acc_ad.png) 16px center no-repeat;
+    font: 18px/1.0em "微软雅黑","HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 297px;
+}
+#login #password{
+	padding-left: 40px;
+	background:#fff url(../images/password.png) 16px center no-repeat;
+    font: 18px/1.0em "微软雅黑","HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width: 297px;
+}
+/*+++ 20150717*/
+#login #captcha{
+    padding-left: 40px;
+    background:#fff url(../images/user.png) 16px center no-repeat;
+    font: 18px/1.0em "微软雅黑","HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 189px;
+    height: 29px;
+}
+#login #yanz{
+    margin-bottom:-3%;
+    margin-left: 2%;
+}
+/*******/
+#switch{
+	margin-bottom: 53px;
+	position: relative;
+	zoom: 1;
+}
+.select ul{
+	display: none;
+	width:339px;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border: 1px solid #5d6063;
+	border-top: none;
+}
+#login #zhanghu{
+	margin-bottom:30px;
+}
+#login #mima{
+	margin-bottom: 20px;
+}
+#login #option{
+	margin-bottom: 60px;
+	font-size: 100%;
+	zoom: 1;
+    margin-top: 5%;
+}
+#login #option a{
+	float: right;
+	text-decoration: underline;
+	color: #f79238;
+}
+#login #option a:hover{
+	text-decoration: none;
+}
+#login #option input{
+	vertical-align: middle;
+}
+#login #option label{
+    margin-left:.8em;
+}
+#login #anniu{
+	text-align: center;
+}
+#login #loginBtn{
+	border: none;
+	color: #fff;
+	font-size: 150%;
+	width: 268px;
+	padding: 10px 0;
+	vertical-align: middle;
+	background: #4e97c7;
+	border-radius:3px;
+	cursor: pointer;
+	margin: 0;
+    font: 18px/1.5em "微软雅黑","HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#login #loginBtn:hover{
+	background: #54a2d6;
+}
+#login .top{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+#login .top a{
+	float: left;
+	width: 50%;
+	text-align: center;
+	line-height: 2em;
+	font-size: 22px;
+	text-decoration: none;
+	color: #424242;
+	border-color: #a8b4ca;
+	background: #f1f1f1;
+}
+#login .top #wo{
+	background: #fff;
+	border-top-left-radius: 8px;
+}
+#login .top #peo{
+	border-left: 1px solid #a8b4ca;
+	border-bottom: 1px solid #a8b4ca;
+	margin-left: -1px;
+	border-top-right-radius: 8px;
+}
+/*#login .top{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+#login .top a{
+	float: left;
+	width: 50%;
+	text-align: center;
+	line-height: 2em;
+	font-size: 22px;
+	text-decoration: none;
+	color: #424242;
+	border-color: #a8b4ca;
+	background: #f1f1f1;
+}
+#login .top #wo{
+	border-right: 1px solid #a8b4ca;
+	border-bottom: 1px solid #a8b4ca;
+	border-top-left-radius: 8px;
+	position: relative;
+}
+#login .top #peo{
+	background: #fff;
+	margin-left: -1px;
+	border-top-right-radius: 8px;
+}*/
+/*弹出层*/
+.overLay{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left: 0;
+	background-color: #181717;
+	opacity: .6;
+	filter:Alpha(Opacity=60);
+	display: none;
+}
+.lesCont{
+	position: fixed;
+	padding: 2em 2em 1.5em 2em;
+	background-color: #fff;
+	border: 1px solid #9FAABE;
+	-ms-border-radius:8px;
+	-moz-border-radius:8px;
+	-o-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	display: none;
+	top:0;
+	left: 0;
+}
+.lesNote{
+	margin-bottom: 1em;
+}
+.center{
+	text-align: center;
+}

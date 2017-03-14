@@ -1,0 +1,131 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='workphone.')
+    meta(name='keywords', content='workphone')
+    title 海云安全手机-管理员
+    link(rel='shortcut icon', href='images/logo.png')
+    link(type='text/css', rel='stylesheet', href='style/reset.css')
+    link(type='text/css', rel='stylesheet', href='jqueryCustom/jquery.mCustomScrollbar.css')
+    link(type='text/css', rel='stylesheet', href='style/admin.css')
+    link(rel='stylesheet', type='text/css', href='style/setLDAP.css')
+    link(rel='stylesheet', type='text/css', href='style/vinput.css')
+    script(type='text/javascript', src='script/modernizr+2.0.3.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='script/setCookie.js')
+    script(type='text/javascript', src='jqueryCustom/jquery.mCustomScrollbar.concat.min.js')
+    script(type='text/javascript', src='script/main.js')
+  body
+    #wrap
+      header
+        // 头部
+        a#toplogo
+          img(src='images/logo_ad.png', alt='', height='45')
+        nav#top
+            ul
+                // 头部的连接
+                li
+                    a(href='/f_org_master') 管理员账户
+                li
+                    a(href='/f_org_master_list') 管理员列表
+                li
+                    a(href='/f_org_admin_list') 操作员列表
+                li
+                    a.navHover(href='/f_org_setLDAP') LDAP配置
+                li
+                    a#logout(href='#') 退出
+      article#setLDAP.unpad
+        // 右面的主体内容容器
+        section
+          div
+            div.flrt
+              button#manu(disabled="disabled") 同步
+            h1 LDAP配置
+          form#setldap(name='setldap', action='', method='get')
+            .f
+              h4 LDAP服务器配置
+            .bk
+              p
+                label(for='ldap_host') LDAP Server IP:
+                input#ldap_host(type='text', name='ldap_host')
+              p
+                label(for='ldap_port') LDAP Server Porter:
+                input#ldap_port(type='text', name='ldap_port')
+              p
+                label(for='ldap_base_dn') LDAP 根节点:
+                input#ldap_base_dn(type='text', name='ldap_base_dn')
+              p
+                label(for='ldap_user_dn') LDAP Server 用户名:
+                input#ldap_user_dn(type='text', name='ldap_user_dn')
+              p
+                label(for='ldap_pw') LDAP Server 密码:
+                input#ldap_pw(type='password', name='ldap_pw')
+            .f
+              h4 用户属性字段名配置
+            .bk
+              p
+                label(for='ldap_at_uid') 用户名:
+                input#ldap_at_uid(type='text', name='ldap_at_uid')
+              //p
+                label(for='ypassword') 密码:
+                input#ypassword(type='password', name='ypassword')
+              p
+                label(for='ldap_at_email') 邮件:
+                input#ldap_at_email(type='text', name='ldap_at_email')
+              p
+                label(for='ldap_at_pnumber') 手机号码:
+                input#ldap_at_pnumber(type='text', name='ldap_at_pnumber')
+              p
+                label(for='ldap_at_allow_use') 是否有权限借入WorkPhone(字段名):
+                input#ldap_at_allow_use(type='text', name='ldap_at_allow_use')
+              p.btn
+                button#tijiao(type='submit') 提交
+                button#chongzhi.err(type='reset') 重置
+          #shouquan
+            button#sq(disabled='disabled') LDAP用户授权管理
+            #setA
+              .tit
+                span.x X
+                h6 LDAP用户授权管理
+              .by
+                .flet 配置用户
+                .frit
+                  .tb
+                    p 用户名
+                    #pzz.jscroll
+                      .jscrollContainer
+                        table#pz(name='pz')
+                          colgroup
+                            col.col1
+                            col.col2
+                          tbody
+                            //tr
+                              td
+                                span.checkbox.checkbox_uncheck
+                              td.tc yinxiaoyou
+                  .btn
+                    button#tj(type='submit') 提交
+                    button#qx.err(type='button') 取消
+          .f
+            h4 同步设置
+          .tbu
+            .fl
+              span.zd 自动同步:
+              #kaiguan.jiaonang.jiaonang_disabled
+            #iterval.select.fl.select_disabled
+              p#tm 选择同步时间
+              ul
+                li
+                  a.option(href='#tm') 每天
+                li
+                  a.option(href='#tm') 每周
+                li
+                  a.option(href='#tm') 每两周
+                li
+                  a.option(href='#tm') 每个月
+                li
+                  a.option(href='#tm') 每年
+    script(type='text/javascript', src='script/login_ad.js')
+    script(type='text/javascript', src='script/vinput.js')
+

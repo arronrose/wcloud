@@ -1,0 +1,34 @@
+extends playout
+
+block content
+  script(type='text/javascript', src='script/ples.js')
+  #loginBG
+    #loginContent
+      h1.title 欢迎使用海云安全手机
+      form#login(action='/login', method='post', name='login', autocomplete='off', onsubmit="return false;")
+        p#pnm.marb
+          label.insertLab(for='Email') 请输入手机号码
+          input#Email(type='text', name='Email', autocomplete='off')
+        p#tgmp.slider
+          label.insertLab(for='pwd') 请输入密码
+          input#pwd(type='password', name='pwd', autocomplete='off')
+          span#errTishi
+        p#yanzheng.nw
+          label.insertLab(for='vert') 输入验证码
+          input#vert(type='text' maxlength='4')
+          img#yanz(src='' alt='' width='112' height='38')
+          a#huan(href='javascript:;') 换一张
+        p#zts.slider
+          我们将通过以上号码发送临时密码！
+        p.marbt
+          a#definPwd.yellow(href='#zhaohui') 忘记密码?
+          label#sv(for='savePerson')
+            input#savePerson(type='checkbox', name='savePerson')
+            span 记住账号
+        p.ohd
+          input#loginBtn(type='submit', value='登入', name='loginBtn')
+          input#zhmm(type='button', value='确定', name='zhmm')
+      address www.MobileSecurity.cn
+      p.cent
+        a.yellow(href='http://www.singuloid.com/workphone.html#workphone', target='_blank') 点击下载海云安全手机应用
+  script(type='text/javascript', src='script/pglobal.js')

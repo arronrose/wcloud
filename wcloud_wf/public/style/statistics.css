@@ -1,0 +1,136 @@
+/*左侧用户树样式*/
+#user_container{
+    width:260px;
+    height: 742px;
+    float:left;
+    clear:both;
+    overflow: auto;
+    white-space: nowrap;
+    border-bottom: 1px solid #9a9a9a;
+}
+#top_zone{
+    display: inline-block;
+    width: 98%;
+    height: 50%;
+}
+#base_info_zone{
+    margin:4px;
+    float: left;
+    width: 40%;
+    height: 100%;
+}
+#liveness_zone{
+    margin:4px;
+    float: right;
+    width: 58%;
+    height: 360px;
+}
+#onlinedays_zone{
+    width: 100%;
+    height: 100%;
+}
+
+#bottom_zone{
+    width: 98%;
+    height: 50%;
+}
+
+.zone_border{
+    border: 1px solid #9a9a9a;
+}
+
+#base_info_tab label{
+    display:inline-block;
+    width:150px;
+    padding-left: 10px;
+}
+
+table.hovertable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #999999;
+    border-collapse: collapse;
+}
+table.hovertable th {
+    background-color:#c3dde0;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #a9c6c9;
+}
+table.hovertable tr {
+    background-color:#d4e3e5;
+}
+table.hovertable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #a9c6c9;
+}
+/*右边用户信息*/
+.firstLi{
+    padding-top: 15px;
+    padding-left:22px;
+    /*background:#fff url(../images/home.png) left top no-repeat;*/
+    position: relative;
+    zoom: 1;
+}
+
+/*基础信息样式*/
+#base_info_tab tr{
+    display:block; /*将tr设置为块体元素*/
+    margin:8.5px;
+}
+.item{
+    display:inline-block;
+    width:150px;
+    padding-left: 10px;
+}
+.title_bar{
+    background-color: #9a9a9a;
+}
+.tool_bar{
+    padding-top: 10px;
+    width: 100%;
+    margin-right: 10px;
+}
+.tools{
+    float: right;
+}
+.title{
+    display:inline-block;
+    padding-left: 10px;
+    font-size: 20px;
+}
+/*select工具样式*/
+.selection{
+    border-right: #000000 1px solid;
+    border-top: #ffffff 1px solid;
+    font-size: 12px;
+    border-left: #ffffff 1px solid;
+    color:#003366;
+    border-bottom: #000000 1px solid;
+    background-color: #f4f4f4;
+}
+
+/*折线图样式*/
+#start_time{
+    width:125px !important;
+}
+#end_time{
+    width:125px !important;
+}
+
+/*饼状图样式*/
+.pie{
+    margin-bottom: 100px;
+    width: 650px !important;
+    height: 350px !important;
+}
+#line_chart{
+    margin-top: 30px;
+    width:1048px;
+    height: 300px;
+}

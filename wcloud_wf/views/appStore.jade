@@ -1,0 +1,86 @@
+doctype html5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1.0,user-scalable=no')
+    link(rel='shortcut icon', href='imagesApp/logo.png')
+    title 海云安全手机应用商店
+    link(rel='stylesheet', type='text/css', href='stylesheets/reset.css')
+    link(rel='stylesheet', type='text/css', href='stylesheets/main.css')
+    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+  body
+    #container
+      // 最外层的容器
+      #mainContainer.tabP.default
+        // 有左侧菜单栏的容器
+        #mainMenuContainer.tabP.default
+          #menu.tab
+            // 左侧菜单栏
+            a#yysd.active(href='#appStore', data-container='menu', data-target='mainPage') 应用商店
+            a#tmpBtn(href='#myApp', data-container='menu', data-target='mainPage') 我的应用
+        #mainPage
+          #appStore.tabP.default
+            // 应用商店-包含最新应用和企业推荐
+            #ding.top.tab
+              // 顶部的头
+              a.zhu(href='#')
+                img(src='imagesApp/acc.png')
+              a.fdj(data-container='ding', data-target='container', href='#search')
+                img(src='imagesApp/sh.png')
+              h1 WorkPhone商店
+            #lastAppMenu.tab.tou
+              // 最新头部
+              a#gengduo(href='#lastMore', data-container='orgAppMenu', data-target='container') 查看更多
+              h2 最新应用
+            #lastAppTit.threeCon
+          #myApp.tabP
+            // 我的应用-包含历史应用和已经安装应用
+            #sh.sechi.tab.top
+              a.zhu(href='#')
+                img(src='imagesApp/acc.png')
+              a.fdj(href='#search', data-container='sh', data-target='container')
+                img(src='imagesApp/sh.png')
+              h1 我的应用
+            #myAppMenu.tab
+              // 我的应用导航
+              a#lishi.active.left_btn(href='#historyApp', data-container='myAppMenu', data-target='hamContainer') 历史应用
+              a#dangqian.right_btn(href='#installApp', data-container='myAppMenu', data-target='hamContainer') 当前应用
+            #hamContainer
+              // 我的应用和历史应用容器
+              #historyApp.tabP.default
+                // 历史应用
+              #installApp.tabP
+                // 已经安装的app
+                .tou
+                  a#updateAll(href='#') 全部更新
+                  h2 有新版本
+                #canUpdate
+                .tou
+                  h2 已经最新
+                #onLast
+      #orgMore.tabP
+        // 企业推荐更多
+        #orgH.tab
+          h1
+            a(href='#mainContainer', data-container='orgH', data-target='container') 应用商店
+      #lastMore.tabP
+        // 更多最新
+        #zuixin.tab.top
+          a.bk(href='#mainContainer', data-container='zuixin', data-target='container')
+            img(src='imagesApp/left.png')
+          h1 WorkPhone应用商店
+        .tou
+          h2 最新应用
+        #lastCon.threeCon
+      #search.tabP
+        // 搜索结果
+        #scg.tab.top
+          a#qxl(href='#mainContainer', data-container='search', data-target='container') 取消
+          a.fdj(href='#search')
+            img(src='imagesApp/sh.png')
+          p#shc
+            input#shBtn(type='search', name="shBtn")
+        #shRes.oneCon
+    // 最外层的容器结束
+    script(type='text/javascript', src='javascripts/main.js')
+    script(type='text/javascript', src='script/strategy.js')
